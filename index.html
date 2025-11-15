@@ -58,10 +58,42 @@
     </ul>
 
     <h2>My Pictures</h2>
-    <div class="image-row">
+        <style>
+    .photo-row {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .photo-card {
+        text-align: center;
+        width: 250px; /* adjust size if needed */
+    }
+
+    .photo-card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .caption {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #555;
+    }
+</style>
+
+<div class="photo-row">
+    <figure class="photo-card">
         <img src="bbyKrkn.jpg" alt="Cute little kraken">
+        <figcaption class="caption">This is my go to profile icon.</figcaption>
+    </figure>
+
+    <figure class="photo-card">
         <img src="mefromAbbs.png" alt="Doodle from a friend">
-    </div>
+        <figcaption class="caption">This is a doodle from a frind.</figcaption>
+    </figure>
+</div>
+
     </main>
 
     <!-- Footer with contact or copyright info -->
