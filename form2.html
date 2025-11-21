@@ -9,8 +9,6 @@
     <script>
         function calculateTotal() {
             let total = 0;
-
-            // Price mapping
             const prices = {
                 cube1: 12.99,
                 cube2: 59.99,
@@ -20,7 +18,6 @@
                 cube6: 15.99
             };
 
-            // Loop through checkboxes
             for (const id in prices) {
                 const checkbox = document.querySelector(`input[name="${id}"]`);
                 if (checkbox && checkbox.checked) {
@@ -28,13 +25,11 @@
                 }
             }
 
-            // Display the running total
             document.getElementById("totalDisplay").textContent = "$" + total.toFixed(2);
         }
 
         function submitOrder(event) {
             event.preventDefault();
-
             const firstname = document.querySelector('input[name="firstname"]').value;
             const lastname = document.querySelector('input[name="lastname"]').value;
 
@@ -49,7 +44,6 @@
             };
 
             let total = 0;
-
             for (const cube in cubeLabels) {
                 const checkbox = document.querySelector(`input[name="${cube}"]`);
                 if (checkbox.checked) {
@@ -87,99 +81,106 @@
         </ul>
     </nav>
 
-    <h2>Order Form</h2>
+    <main>
+        <h2>Order Form</h2>
 
-    <form onsubmit="submitOrder(event)">
+        <form onsubmit="submitOrder(event)">
 
-        <h3>Your Information</h3>
-        <label>First Name:</label>
-        <input type="text" name="firstname" required><br><br>
+            <div class="section-bubble bubble-white">
+                <h3>Your Information</h3>
+                <label>First Name:</label>
+                <input type="text" name="firstname" required><br><br>
 
-        <label>Last Name:</label>
-        <input type="text" name="lastname" required><br><br>
+                <label>Last Name:</label>
+                <input type="text" name="lastname" required><br><br>
 
-        <label>Email:</label>
-        <input type="email" name="email" required><br><br>
+                <label>Email:</label>
+                <input type="email" name="email" required><br><br>
 
-        <label>Age:</label>
-        <input type="number" name="age" min="1"><br><br>
+                <label>Age:</label>
+                <input type="number" name="age" min="1"><br><br>
+            </div>
 
-        <h3>Personal Preferences</h3>
-        <label>Favorite Hobby:</label>
-        <input type="text" name="hobby"><br><br>
+            <div class="section-bubble bubble-yellow">
+                <h3>Personal Preferences</h3>
+                <label>Favorite Hobby:</label>
+                <input type="text" name="hobby"><br><br>
 
-        <label>Favorite Color:</label>
-        <input type="color" name="color"><br><br>
+                <label>Favorite Color:</label>
+                <input type="color" name="color"><br><br>
 
-        <label>Skill Level:</label>
-        <select name="skill">
-            <option>Beginner</option>
-            <option>Intermediate</option>
-            <option>Advanced</option>
-        </select><br><br>
+                <label>Skill Level:</label>
+                <select name="skill">
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                </select><br><br>
+            </div>
 
-        <h3>Cube Type Selection</h3>
-        <label>Select a puzzle type:</label><br>
-        <input type="radio" name="choice" value="3x3"> 3x3 Cube<br>
-        <input type="radio" name="choice" value="Pyraminx"> Pyraminx<br>
-        <input type="radio" name="choice" value="Megaminx"> Megaminx<br><br>
+            <div class="section-bubble bubble-red">
+                <h3>Cube Type Selection</h3>
+                <label>Select a puzzle type:</label><br>
+                <input type="radio" name="choice" value="3x3"> 3x3 Cube<br>
+                <input type="radio" name="choice" value="Pyraminx"> Pyraminx<br>
+                <input type="radio" name="choice" value="Megaminx"> Megaminx<br><br>
+            </div>
 
-        <h3>Cube Brands and Models</h3>
-        <label>Choose from the list (you may select more than one):</label><br>
+            <div class="section-bubble bubble-blue">
+                <h3>Cube Brands and Models</h3>
+                <label>Choose from the list (you may select more than one):</label><br>
 
-        <input type="checkbox" name="cube1" value="Rubik Standard 3x3" onclick="calculateTotal()">
-        Rubik Standard 3x3 ($12.99)<br>
+                <input type="checkbox" name="cube1" value="Rubik Standard 3x3" onclick="calculateTotal()">
+                Rubik Standard 3x3 ($12.99)<br>
 
-        <input type="checkbox" name="cube2" value="GoCube Smart Cube" onclick="calculateTotal()">
-        GoCube Smart Cube ($59.99)<br>
+                <input type="checkbox" name="cube2" value="GoCube Smart Cube" onclick="calculateTotal()">
+                GoCube Smart Cube ($59.99)<br>
 
-        <input type="checkbox" name="cube3" value="Gan 356 RS" onclick="calculateTotal()">
-        Gan 356 RS ($22.99)<br>
+                <input type="checkbox" name="cube3" value="Gan 356 RS" onclick="calculateTotal()">
+                Gan 356 RS ($22.99)<br>
 
-        <input type="checkbox" name="cube4" value="MoYu RS3M Magnetic" onclick="calculateTotal()">
-        MoYu RS3M Magnetic ($14.99)<br>
+                <input type="checkbox" name="cube4" value="MoYu RS3M Magnetic" onclick="calculateTotal()">
+                MoYu RS3M Magnetic ($14.99)<br>
 
-        <input type="checkbox" name="cube5" value="QiYi Pyraminx" onclick="calculateTotal()">
-        QiYi Pyraminx ($9.99)<br>
+                <input type="checkbox" name="cube5" value="QiYi Pyraminx" onclick="calculateTotal()">
+                QiYi Pyraminx ($9.99)<br>
 
-        <input type="checkbox" name="cube6" value="ShengShou Megaminx" onclick="calculateTotal()">
-        ShengShou Megaminx ($15.99)<br><br>
+                <input type="checkbox" name="cube6" value="ShengShou Megaminx" onclick="calculateTotal()">
+                ShengShou Megaminx ($15.99)<br><br>
 
-        <h3>Running Total</h3>
-        <p><strong>Total: <span id="totalDisplay">$0.00</span></strong></p>
-        <button type="button" onclick="calculateTotal()">Recalculate Total</button>
-        <br><br>
+                <h4>Running Total</h4>
+                <p><strong>Total: <span id="totalDisplay">$0.00</span></strong></p>
+                <button type="button" onclick="calculateTotal()">Recalculate Total</button>
+            </div>
 
-        <h3>Experience Rating</h3>
-        <label>Rate your experience (1 to 10)</label><br>
-        <input type="range" name="experience" min="1" max="10" id="experienceRange" 
-               oninput="expValue.textContent = this.value">
-        <span id="expValue">5</span><br><br>
+            <div class="section-bubble bubble-green">
+                <h3>Experience Rating</h3>
+                <label>Rate your experience (1 to 10)</label><br>
+                <input type="range" name="experience" min="1" max="10" id="experienceRange" 
+                       oninput="expValue.textContent = this.value">
+                <span id="expValue">5</span><br><br>
+            </div>
 
-        <h3>Shipping Preference</h3>
-        <label>Shipping Speed Preference:</label>
-        <input list="shipping" name="shipPref">
-        <datalist id="shipping">
-            <option value="Standard">
-            <option value="Priority">
-            <option value="Express">
-        </datalist>
-        <br><br>
-        
+            <div class="section-bubble bubble-orange">
+                <h3>Shipping Preference</h3>
+                <label>Shipping Speed Preference:</label>
+                <input list="shipping" name="shipPref">
+                <datalist id="shipping">
+                    <option value="Standard">
+                    <option value="Priority">
+                    <option value="Express">
+                </datalist><br><br>
+            </div>
 
+            <div class="section-bubble bubble-white">
+                <h3>Additional Comments</h3>
+                <label>Comments:</label><br>
+                <textarea name="comments" rows="4" cols="40"></textarea><br><br>
 
+                <button type="submit">Submit Order</button>
+            </div>
 
-
-
-
-
-        <h3>Additional Comments</h3>
-        <label>Comments:</label><br>
-        <textarea name="comments" rows="4" cols="40"></textarea><br><br>
-
-        <button type="submit">Submit Order</button>
-
-    </form>
+        </form>
+    </main>
 
 </body>
 </html>
