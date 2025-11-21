@@ -7,9 +7,64 @@
     <link rel="stylesheet" href="styles.css">
 
     <script>
+        function calculateTotal() {
+            let total = 0;
+
+            // Price mapping
+            const prices = {
+                cube1: 12.99,
+                cube2: 59.99,
+                cube3: 22.99,
+                cube4: 14.99,
+                cube5: 9.99,
+                cube6: 15.99
+            };
+
+            // Loop through checkboxes
+            for (const id in prices) {
+                const checkbox = document.querySelector(`input[name="${id}"]`);
+                if (checkbox && checkbox.checked) {
+                    total += prices[id];
+                }
+            }
+
+            // Display the running total
+            document.getElementById("totalDisplay").textContent = "$" + total.toFixed(2);
+        }
+
         function submitOrder(event) {
             event.preventDefault();
-            alert("Your order has been submitted. Thank you.");
+
+            const firstname = document.querySelector('input[name="firstname"]').value;
+            const lastname = document.querySelector('input[name="lastname"]').value;
+
+            const selectedCubes = [];
+            const cubeLabels = {
+                cube1: "Rubik Standard 3x3 ($12.99)",
+                cube2: "GoCube Smart Cube ($59.99)",
+                cube3: "Gan 356 RS ($22.99)",
+                cube4: "MoYu RS3M Magnetic ($14.99)",
+                cube5: "QiYi Pyraminx ($9.99)",
+                cube6: "ShengShou Megaminx ($15.99)"
+            };
+
+            let total = 0;
+
+            for (const cube in cubeLabels) {
+                const checkbox = document.querySelector(`input[name="${cube}"]`);
+                if (checkbox.checked) {
+                    selectedCubes.push(cubeLabels[cube]);
+                    total += parseFloat(cubeLabels[cube].match(/\$(\d+\.\d+)/)[1]);
+                }
+            }
+
+            alert(
+                "Your order has been submitted.\n\n" +
+                "Customer: " + firstname + " " + lastname + "\n" +
+                "Items Ordered:\n- " + (selectedCubes.length ? selectedCubes.join("\n- ") : "No cubes selected") +
+                "\n\nRunning Total: $" + total.toFixed(2) +
+                "\n\nThank you for your order!"
+            );
         }
     </script>
 </head>
@@ -37,7 +92,6 @@
     <form onsubmit="submitOrder(event)">
 
         <h3>Your Information</h3>
-
         <label>First Name:</label>
         <input type="text" name="firstname" required><br><br>
 
@@ -51,7 +105,6 @@
         <input type="number" name="age" min="1"><br><br>
 
         <h3>Personal Preferences</h3>
-
         <label>Favorite Hobby:</label>
         <input type="text" name="hobby"><br><br>
 
@@ -66,7 +119,6 @@
         </select><br><br>
 
         <h3>Cube Type Selection</h3>
-
         <label>Select a puzzle type:</label><br>
         <input type="radio" name="choice" value="3x3"> 3x3 Cube<br>
         <input type="radio" name="choice" value="Pyraminx"> Pyraminx<br>
@@ -75,26 +127,30 @@
         <h3>Cube Brands and Models</h3>
         <label>Choose from the list (you may select more than one):</label><br>
 
-        <input type="checkbox" name="cube1" value="Rubik Standard 3x3 ($12.99)">
+        <input type="checkbox" name="cube1" value="Rubik Standard 3x3" onclick="calculateTotal()">
         Rubik Standard 3x3 ($12.99)<br>
 
-        <input type="checkbox" name="cube2" value="GoCube Smart Cube ($59.99)">
+        <input type="checkbox" name="cube2" value="GoCube Smart Cube" onclick="calculateTotal()">
         GoCube Smart Cube ($59.99)<br>
 
-        <input type="checkbox" name="cube3" value="Gan 356 RS ($22.99)">
+        <input type="checkbox" name="cube3" value="Gan 356 RS" onclick="calculateTotal()">
         Gan 356 RS ($22.99)<br>
 
-        <input type="checkbox" name="cube4" value="MoYu RS3M Magnetic ($14.99)">
+        <input type="checkbox" name="cube4" value="MoYu RS3M Magnetic" onclick="calculateTotal()">
         MoYu RS3M Magnetic ($14.99)<br>
 
-        <input type="checkbox" name="cube5" value="QiYi Pyraminx ($9.99)">
+        <input type="checkbox" name="cube5" value="QiYi Pyraminx" onclick="calculateTotal()">
         QiYi Pyraminx ($9.99)<br>
 
-        <input type="checkbox" name="cube6" value="ShengShou Megaminx ($15.99)">
+        <input type="checkbox" name="cube6" value="ShengShou Megaminx" onclick="calculateTotal()">
         ShengShou Megaminx ($15.99)<br><br>
 
-        <h3>Experience Rating</h3>
+        <h3>Running Total</h3>
+        <p><strong>Total: <span id="totalDisplay">$0.00</span></strong></p>
+        <button type="button" onclick="calculateTotal()">Recalculate Total</button>
+        <br><br>
 
+        <h3>Experience Rating</h3>
         <label>Rate your experience (1 to 10)</label><br>
         <input type="range" name="experience" min="1" max="10" id="experienceRange" 
                oninput="expValue.textContent = this.value">
