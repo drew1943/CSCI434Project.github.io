@@ -1,45 +1,51 @@
 /* ====== Global Styles ====== */
 
+/* Overall page layout and typography */
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f5f9;
+    color: #333;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #e5e5e5;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* Page header */
+/* ====== Header Section ====== */
+
+/* Creates a strong header bar */
 header {
-    background-color: white;
-    padding: 20px;
+    background: linear-gradient(135deg, #00509e, #0077cc);
+    color: white;
     text-align: center;
-    border-bottom: 4px solid #333;
+    padding: 3rem 1rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-    margin: 0;
-    color: #222;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
 }
 
-/* Navigation bar container */
+/* ====== Navigation (Rubik Cube Block Theme) ====== */
+
 nav {
-    background-color: #e5e5e5;
-    padding: 2px; /* creates small spacing around the cube block bar */
+    background-color: #f2f5f9;
+    padding: 2px;
 }
 
-/* Navigation list */
 nav ul {
-    list-style: none;
-    margin: 0;
+    list-style-type: none;
     padding: 0;
+    margin: 0;
     display: flex;
     gap: 2px; /* minimal spacing between cube blocks */
 }
 
-/* Each list item stretches evenly */
 nav li {
     flex: 1;
 }
 
-/* Cube block buttons */
 nav a {
     display: block;
     text-align: center;
@@ -47,11 +53,10 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     color: white;
-    box-sizing: border-box;
-    border-radius: 0; /* square edges */
+    border-radius: 0; /* square look */
 }
 
-/* Rubik cube sticker colors */
+/* Rubik cube colors */
 nav li:nth-child(1) a { background-color: #d80000; } /* red */
 nav li:nth-child(2) a { background-color: #ff8c00; } /* orange */
 nav li:nth-child(3) a { background-color: #ffd500; } /* yellow */
@@ -60,12 +65,39 @@ nav li:nth-child(5) a { background-color: #0046ad; } /* blue */
 nav li:nth-child(6) a { background-color: #8200ff; } /* purple */
 nav li:nth-child(7) a { background-color: #555555; } /* gray */
 
-/* Hover effect to show interaction */
 nav a:hover {
     opacity: 0.85;
 }
 
-/* General page content styling for readability */
-main, section {
-    padding: 20px;
+/* ====== Main Content ====== */
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Card container styling */
+section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+section:hover {
+    transform: scale(1.01);
+}
+
+/* ====== Footer Section ====== */
+
+footer {
+    background-color: #00509e;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 3rem;
 }
