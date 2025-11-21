@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second updated form for CSCI434</title>
 
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Second Form in HTML for this course. </h1>
+        <p>This is an updated form to proccess something like an order.</p>
+    </header>
+    
+          <!-- Navigation section for future pages -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Course Projects</a></li>
+            <li><a href="terms.html">Terms and Definitions</a></li>
+            <li><a href="images.html">Puzzle Gallery</a></li>
+            <li><a href="multimedia.html">How To Solve a Cube</a></li>
+            <li><a href="links.html">Helpful Puzzle Resources</a></li>
+            <li><a href="interactive.html">Interactive Puzzle Tools</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Unit 3 Practice Form</h1>
+
+        <!-- Draft of form with multiple imputs --> 
+    <form>
+        <label>First Name:</label>
+        <input type="text" name="firstname"><br><br>
+
+        <label>Last Name:</label>
+        <input type="text" name="lastname"><br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email"><br><br>
+
+        <label>Age:</label>
+        <input type="number" name="age"><br><br>
+
+        <label>Favorite Hobby:</label>
+        <input type="text" name="hobby"><br><br>
+
+        <label>Favorite Color:</label>
+        <input type="color" name="color"><br><br>
+
+        <label>Choose your skill level:</label>
+        <select name="skill">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+        </select><br><br>
+
+        <label>Choose an option:</label>
+        <input type="radio" name="choice" value="Option One"> 3x3
+        <input type="radio" name="choice" value="Option Two"> Piraminx
+        <input type="radio" name="choice" value="Option Two"> Megaminx
+        <br><br>
+
+        <label>Cube brands to filter, check all that apply:</label>
+        <input type="checkbox" name="check1"> Rubik's
+        <input type="checkbox" name="check2"> GoCube
+        <input type="checkbox" name="check2"> Toyzon
+        <input type="checkbox" name="check2"> Other 
+        <br><br>
+
+        <label>Rate Your Experience (1 to 10)</label><br>
+        <input type="range" name="experience" min="1" max="10" id="experienceRange" oninput="expValue.textContent = this.value">
+        <span id="expValue">5</span><br><br>
+
+        <label>Choose your favorite type of music:</label>
+        <input list="music" name="musicType">
+        <datalist id="music">
+            <option value="Rock">
+            <option value="Hip Hop">
+            <option value="Country">
+            <option value="EDM">
+            <option value="Jazz">
+        </datalist>
+        <br><br>
+
+        <label>Comments:</label><br>
+        <textarea name="comments" rows="4" cols="40"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+      
+    </form>
+</body>
+</html>
