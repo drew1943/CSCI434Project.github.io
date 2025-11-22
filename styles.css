@@ -55,30 +55,38 @@ nav a {
     color: white;
     border-radius: 0; /* square look */
 }
-/* photo style*/ 
-   <style>
-    .photo-row {
-        display: flex;
-        gap: 20px;
-        margin-top: 20px;
-    }
 
-    .photo-card {
-        text-align: center;
-        width: 300px; 
-    }
+/* ====== Global Image Styles ====== */
 
-    .photo-card img {
-        width: 100%;
-        border-radius: 8px;
-    }
+/* Applies to all images inside main content sections */
+main img {
+    width: 100%;           /* Makes the image responsive to container width */
+    max-width: 400px;      /* Optional: limit maximum width */
+    border-radius: 8px;    /* Rounded corners */
+    display: block;        /* Avoid inline spacing issues */
+    margin: 0 auto 10px;   /* Center images and give bottom spacing */
+}
 
-    .caption {
-        margin-top: 8px;
-        font-size: 14px;
-        color: #555;
-    }
-</style>
+/* Optional: captions under images */
+main figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* If using .photo-row container for multiple images */
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;      /* Allows multiple rows on smaller screens */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.photo-card {
+    text-align: center;
+    flex: 1 1 300px;      /* Responsive sizing with minimum width */
+}
 
 /* Rubik cube colors */
 nav li:nth-child(1) a { background-color: #d80000; } /* red */
