@@ -3,32 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew's Web Programming Project</title>
-
-    <!-- External stylesheet link -->
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Rubik's Cube Terms & Notation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- Main header section for the page -->
+    <!-- Header -->
     <header>
-        <h1>Welcome to My Web Walkthrough on how to solve a Rubiks Cube </h1>
-        <p>This site showcases my progress through CSCI434 at Southwestern College.</p>
+        <h1>Rubik's Cube Terms & Notation</h1>
+        <p>Learn the language of twisty puzzles to solve your cube efficiently</p>
     </header>
-<nav>
+
+    <!-- Navigation -->
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Course Projects</a></li>
-            <li><a href="terms.html">Terms and Definitions</a></li>
-            <li><a href="images.html">Puzzle Gallery</a></li>
-            <li><a href="multimedia.html">How To Solve a Cube</a></li>
-            <li><a href="links.html">Helpful Puzzle Resources</a></li>
-            <li><a href="interactive.html">Interactive Puzzle Tools</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="images.html">Images</a></li>
+            <li><a href="multimedia.html">Tutorials</a></li>
+            <li><a href="links.html">Links</a></li>
         </ul>
     </nav>
-<h1>Rubiks Cube Terms and Definitions</h1>
- <!-- Main Content -->
+
+    <!-- Main Content -->
     <main>
         <!-- Introduction -->
         <section class="section-bubble bubble-white">
@@ -36,9 +32,6 @@
             <p>
                 This page introduces the fundamental terminology and notation used in Rubik's Cube solving.
                 Understanding these terms is essential to follow tutorials and improve your solving speed.
-            </p>
-            <p>
-                Each term is accompanied by a description and placeholder for an image to illustrate the concept visually.
             </p>
         </section>
 
@@ -56,13 +49,12 @@
                 <li><strong>F</strong> – Front face</li>
                 <li><strong>B</strong> – Back face</li>
             </ul>
-            <!-- Placeholder for image showing all cube faces -->
-            <div style="text-align:center; margin-top:1rem;">
-                <img src="CubeFaceNotation.jpg" alt="Cube Faces Diagram" style="max-width:100%; border-radius:8px;">
-                <div style="text-align:center; margin-top:1rem;">
-                <img src="AlternateFaceNote.jpg" alt="Cube Faces Diagram2" style="max-width:100%; border-radius:8px;">
-                <p style="font-size:0.9rem; color:#555;">Example diagram of cube faces (R, L, U, D, F, B)</p>
-            </div>
+
+            <!-- Single centered image -->
+            <figure class="photo-card" style="max-width:400px; margin:auto;">
+                <img src="images/CubeFaceNotation.jpg" alt="Cube Faces Diagram">
+                <figcaption>Diagram showing all cube faces (R, L, U, D, F, B)</figcaption>
+            </figure>
         </section>
 
         <!-- Move Types -->
@@ -72,14 +64,25 @@
                 Each move can be performed in three ways:
             </p>
             <ul>
-                <li><strong>Standard (Clockwise)</strong> – A 90-degree clockwise turn of the face (R).</li>
+                <li><strong>Standard (Clockwise)</strong> – 90-degree clockwise turn of the face (R).</li>
                 <li><strong>Prime (Counter-Clockwise)</strong> – Denoted by an apostrophe, e.g., R', rotates 90 degrees counter-clockwise.</li>
                 <li><strong>Double Turn</strong> – Denoted by the number 2, e.g., R2, rotates 180 degrees.</li>
             </ul>
-            <!-- Placeholder for move type images -->
-            <div style="text-align:center; margin-top:1rem;">
-                <img src="images/move_types_placeholder.png" alt="Move Types Diagram" style="max-width:100%; border-radius:8px;">
-                <p style="font-size:0.9rem; color:#555;">Visual example of clockwise, counter-clockwise, and double turns</p>
+
+            <!-- Row of images -->
+            <div class="photo-row">
+                <figure class="photo-card">
+                    <img src="images/ClockwiseTurn.jpg" alt="Clockwise Turn">
+                    <figcaption>Clockwise turn (R)</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <img src="images/CounterClockwiseTurn.jpg" alt="Counter-Clockwise Turn">
+                    <figcaption>Counter-clockwise turn (R')</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <img src="images/DoubleTurn.jpg" alt="Double Turn">
+                    <figcaption>Double turn (R2)</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -94,11 +97,12 @@
                 <li><strong>Edge Pieces</strong> – Two-colored pieces that connect centers.</li>
                 <li><strong>Corner Pieces</strong> – Three-colored pieces at the corners of the cube.</li>
             </ul>
-            <!-- Placeholder for cube pieces image -->
-            <div style="text-align:center; margin-top:1rem;">
-                <img src="images/cube_pieces_placeholder.png" alt="Cube Pieces Diagram" style="max-width:100%; border-radius:8px;">
-                <p style="font-size:0.9rem; color:#555;">Illustration of center, edge, and corner pieces</p>
-            </div>
+
+            <!-- Single image centered -->
+            <figure class="photo-card" style="max-width:400px; margin:auto;">
+                <img src="images/CubePieces.jpg" alt="Cube Pieces">
+                <figcaption>Illustration of center, edge, and corner pieces</figcaption>
+            </figure>
         </section>
 
         <!-- Algorithms -->
@@ -109,11 +113,12 @@
                 Example of a simple algorithm: <strong>R U R' U'</strong>.  
                 These sequences are the building blocks for solving the cube step by step.
             </p>
-            <!-- Placeholder for algorithm image -->
-            <div style="text-align:center; margin-top:1rem;">
-                <img src="images/algorithm_placeholder.png" alt="Algorithm Example Diagram" style="max-width:100%; border-radius:8px;">
-                <p style="font-size:0.9rem; color:#555;">Illustration of an algorithm affecting specific cube pieces</p>
-            </div>
+
+            <!-- Single image centered -->
+            <figure class="photo-card" style="max-width:400px; margin:auto;">
+                <img src="images/AlgorithmExample.jpg" alt="Algorithm Example Diagram">
+                <figcaption>Algorithm affecting specific cube pieces</figcaption>
+            </figure>
         </section>
 
         <!-- Footer Note -->
@@ -122,7 +127,6 @@
                 This terms page is intended for beginners. Each section can be expanded with additional images, GIFs, or interactive diagrams to make learning more visual.
             </p>
         </section>
-
     </main>
 
     <!-- Footer -->
