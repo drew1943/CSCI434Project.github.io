@@ -94,9 +94,8 @@ figcaption, .caption {
 .photo-card img {
     width: 100%;               /* fills card width */
     height: 200px;             /* uniform height for all cubes */
-    object-fit: cover;         /* crop excess, keep aspect ratio */
-    object-position: center;   /* focus on center of image */
-    border-radius: 8px;
+    object-fit: cover;         /* crop excess, keep aspect ratio */  
+    border-radius: 10px;
 }
 
 /* Rubik cube colors */
