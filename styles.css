@@ -99,12 +99,6 @@ figcaption, .caption {
     border-radius: 8px;
 }
 
-figcaption {
-    margin-top: 6px;
-    font-size: 0.9rem;
-    color: #000;               /* change to #fff if images are dark */
-}
-
 /* Rubik cube colors */
 nav li:nth-child(1) a { background-color: #d80000; } /* red */
 nav li:nth-child(2) a { background-color: #ff8c00; } /* orange */
