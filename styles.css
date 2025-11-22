@@ -91,11 +91,6 @@ figcaption, .caption {
     object-position: center;
     border-radius: 8px;
 }
-.photo-card img {
-    width: 100%;           /* Scale to container */
-    height: auto;          /* Maintain aspect ratio */
-    border-radius: 8px;
-}
 
 
 /* Rubik cube colors */
