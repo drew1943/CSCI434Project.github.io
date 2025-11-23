@@ -3,7 +3,7 @@
 /* Overall page layout and typography */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f2f5f9;
+    background-color: #fafafa;
     color: #333;
     margin: 0;
     padding: 0;
@@ -96,7 +96,7 @@ figcaption, .caption {
 }
 
 /* Rubik cube colors */
-nav li:nth-child(1) a { background-color: #fafafa; } /* soft white */
+nav li:nth-child(1) a { background-color: #ffffff; } /* soft white */
 nav li:nth-child(2) a { background-color: #c41e3a; } /* red */
 nav li:nth-child(3) a { background-color: #ff6f00; } /* orange */
 nav li:nth-child(4) a { background-color: #009e60; } /* green */
