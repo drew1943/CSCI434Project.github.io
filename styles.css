@@ -96,13 +96,13 @@ figcaption, .caption {
 }
 
 /* Rubik cube colors */
-nav li:nth-child(1) a { background-color: #d80000; } /* red */
-nav li:nth-child(2) a { background-color: #ff8c00; } /* orange */
-nav li:nth-child(3) a { background-color: #ffd500; } /* yellow */
-nav li:nth-child(4) a { background-color: #009b48; } /* green */
-nav li:nth-child(5) a { background-color: #0046ad; } /* blue */
-nav li:nth-child(6) a { background-color: #8200ff; } /* purple */
-nav li:nth-child(7) a { background-color: #555555; } /* gray */
+nav li:nth-child(1) a { background-color: #ffffff; } /* white */
+nav li:nth-child(2) a { background-color: #c41e3a; } /* red */
+nav li:nth-child(3) a { background-color: #ff6f00; } /* orange */
+nav li:nth-child(4) a { background-color: #009e60; } /* green */
+nav li:nth-child(5) a { background-color: #0051ba; } /* blue */
+nav li:nth-child(6) a { background-color: #f2e23d; } /* yellow */
+nav li:nth-child(7) a { background-color: #8200ff; } /* purple */
 
 nav a:hover {
     opacity: 0.85;
@@ -140,12 +140,12 @@ section:hover {
 }
 
 /* Bubble boxes for form with strong colors */
-.bubble-white { background-color: rgba(255, 255, 255, 0.9); }
-.bubble-yellow { background-color: rgba(255, 255, 0, 0.6); }
-.bubble-red { background-color: rgba(255, 0, 0, 0.6); }
-.bubble-blue { background-color: rgba(0, 0, 255, 0.6); }
-.bubble-green { background-color: rgba(0, 128, 0, 0.6); }
-.bubble-orange { background-color: rgba(255, 165, 0, 0.6); }
+.bubble-white { background-color: rgba(255, 255, 255, 0.95); }
+.bubble-yellow { background-color: rgba(242, 226, 61, 0.85); }
+.bubble-red { background-color: rgba(196, 30, 58, 0.85); }
+.bubble-blue { background-color: rgba(0, 81, 186, 0.85); }
+.bubble-green { background-color: rgba(0, 158, 96, 0.85); }
+.bubble-orange { background-color: rgba(255, 111, 0, 0.85); }
 
 /* ====== Footer Section ====== */
 
