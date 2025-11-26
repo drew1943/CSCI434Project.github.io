@@ -72,12 +72,20 @@
 
     <div class="step">
         <h3>1. Solve the White Cross</h3>
+        <p>Goal: make a cross on one face (conventionally white) and make sure the side colors of those edge pieces match the center colors on the adjacent faces.
+        How to do it: Find a white edge piece (white plus a side color). Bring it to the top layer and rotate the top until the side color lines up with its center, then turn that edge down into the bottom face.
+        Most of the time this is done with intuitive turns; there is no single required algorithm. Practice getting the edges to match both center colors (not only the white).</p>
         <img src="WhiteCross.png" alt="Rubik's Cube white cross example">
         <p>Form a white cross that aligns with the center colors on all sides.</p>
     </div>
 
     <div class="step">
         <h3>2. Solve the White Corners</h3>
+        Goal: Put each corner that belongs with the white face into place so the entire first face is solved and the side stickers match their centers.
+        Algorithm (corner insertion / rotation): repeatedly use this to rotate a corner in place until the white sticker is on the bottom (assuming you hold the solved white cross on bottom):
+        R' D' R D
+        How to use it: Place the unsolved white corner in the bottom-front-right position (so the white sticker is on the side or top, not already on bottom).
+        Apply R' D' R D repeatedly until the corner is oriented correctly (white on the bottom). Repeat for all four corners
         <img src="WhiteLayer.png" alt="Rubik's Cube white corners example">
         <p>Insert each white corner until the whole white face is complete.</p>
     </div>
