@@ -68,27 +68,29 @@
     <!-- Step 1: White Cross -->
     <div class="step">
         <h3>1. Solve the White Cross</h3>
-        <p><strong>Goal:</strong> Make a white cross on one face while aligning the side colors with the center pieces of the adjacent faces.</p>
-        <p><strong>How to do it:</strong> Use intuitive moves to bring white edge pieces to the bottom layer. Focus on matching both the white face and the side colors with their centers. This step usually doesn’t require strict algorithms, just careful observation.</p>
+        <p><b>Goal:</b> Make a white cross on one face while aligning the side colors with the center pieces of the adjacent faces.</p>
+        <p><b>How to do it:</b> Use intuitive moves to bring white edge pieces to the bottom (or top) layer depending on how you hold the cube for orientation. 
+            Focus on matching both the white face and the side colors with their centers. This step usually doesn’t require strict algorithms, just careful observation.</p>
         <img src="WhiteCross.png" alt="White cross example">
     </div>
 
     <!-- Step 2: White Corners -->
     <div class="step">
         <h3>2. Solve the White Corners</h3>
-        <p><strong>Goal:</strong> Complete the first layer by placing the four white corner pieces in their correct positions and orientations.</p>
-        <p><strong>Algorithm:</strong> <b>R' D' R D</b></p>
-        <p><strong>Instructions:</strong> Hold the solved white cross on the bottom. Place an unsolved white corner in the bottom-front-right slot with the white sticker on the side or top. Apply <code>R' D' R D</code> repeatedly until the white sticker is on the bottom. Repeat for all four corners.</p>
+        <p><b>Goal:</b> Complete the first layer by placing the four white corner pieces in their correct positions and orientations.</p>
+        <p><b>Algorithm: R' D' R D</b></p>
+        <p><b>Instructions:</b> Hold the solved white cross on the bottom. Place an unsolved white corner in the bottom-front-right slot with the white sticker on the side or top. 
+            Apply <b>R' D' R D</b> repeatedly until the white sticker is on the bottom. Repeat for all four corners.</p>
         <img src="WhiteLayer.png" alt="White corners example">
     </div>
 
     <!-- Step 3: Middle Layer -->
     <div class="step">
         <h3>3. Solve the Middle Layer Edges</h3>
-        <p><strong>Goal:</strong> Insert the four edge pieces into the middle layer without disturbing the solved white face.</p>
-        <p><strong>Algorithms:</strong></p>
-            <br>Edge to the right: <b>U R U' R' U' F' U F</b>
-            <br>Edge to the left: <b>U' L' U L U F U' F'</b>
+        <p><b>Goal:</b> Insert the four edge pieces into the middle layer without disturbing the solved white face.</p>
+        <p><b>Algorithms:</b></p>
+            <p>Edge to the right: <b>U R U' R' U' F' U F</b></p>
+            <p>Edge to the left: <b>U' L' U L U F U' F'</b></p>
         <p><strong>Instructions:</strong> Identify the edge in the top layer. Align it with the center of the corresponding color. Decide if it goes to the left or right and use the matching algorithm. Repeat for all middle layer edges.</p>
         <img src="MiddleEdge.png" alt="Middle layer edges example">
     </div>
@@ -96,20 +98,16 @@
     <!-- Step 4: Yellow Cross -->
     <div class="step">
         <h3>4. Solve the Yellow Cross</h3>
-        <p><strong>Goal:</strong> Form a yellow cross on the top face regardless of corner positions.</p>
-        <p><strong>Identify patterns:</strong> You will see one of these shapes:</p>
-        <ul>
-            <li>Dot (no edges yellow)</li>
-            <li>L shape (small corner L)</li>
-            <li>Line (straight horizontal bar)</li>
-        </ul>
-        <p><strong>Algorithm:</strong> <code>F R U R' U' F'</code></p>
-        <p><strong>Instructions:</strong> 
-        <ul>
-            <li>Dot: apply the algorithm once, any orientation</li>
-            <li>L shape: hold L at upper-left and apply algorithm</li>
-            <li>Line: hold horizontally and apply algorithm</li>
-        </ul>
+        <p><b>Goal:</b> Form a yellow cross on the top face regardless of corner positions.</p>
+        <p><b>Identify patterns:</b> You will see one of these shapes:</p>
+            <p>Dot (no edges yellow)</p>
+            <p>L shape (small corner L)</p>
+            <p>Line (straight horizontal bar)</p>
+        <p><b>Algorithm: F R U R' U' F'</b></p>
+        <p><b>Instructions:</b> 
+            <p>Dot: apply the algorithm once, any orientation</p>
+            <p>L shape: hold L at upper-left and apply algorithm</p>
+            <p>Line: hold horizontally and apply algorithm</p>
         Repeat until the yellow cross is formed.</p>
         <img src="YellowCrossShapes.png" alt="Yellow cross patterns">
     </div>
@@ -117,9 +115,9 @@
     <!-- Step 5: Position Yellow Corners -->
     <div class="step">
         <h3>5. Position Yellow Corners</h3>
-        <p><strong>Goal:</strong> Place all yellow corners in their correct location (orientation may not be correct yet).</p>
-        <p><strong>Algorithm:</strong> <code>U R U' L' U R' U' L</code></p>
-        <p><strong>Instructions:</strong> Keep the correctly placed corner at the front-right of the top face. Apply the algorithm until all corners are in their correct positions.</p>
+        <p><b>Goal:</b> Place all yellow corners in their correct location (orientation may not be correct yet).</p>
+        <p><b>Algorithm: U R U' L' U R' U' L</b></p>
+        <p><b>Instructions:</b> Keep the correctly placed corner at the front-right of the top face. Apply the algorithm until all corners are in their correct positions.</p>
         <img src="YellowCorner1.jpg" alt="Yellow corners placement">
     </div>
 
