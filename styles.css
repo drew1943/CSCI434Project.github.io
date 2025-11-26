@@ -114,67 +114,70 @@ section:hover {
 
 /* All images inside main content */
 main img {
-    max-width: 100%;      /* Never exceed the width of the container */
-    height: auto;         /* Keep natural aspect ratio */
-    display: block;       /* Treat images as block elements for margin */
-    margin: 15px auto;    /* Centers images with vertical spacing */
-    border-radius: 10px;  /* Consistent rounded corners */
-    object-fit: contain;  /* Ensures images are fully visible */
+    display: block;           /* Treat images as block elements */
+    margin: 15px auto;        /* Centers images vertically and horizontally */
+    height: auto;             /* Preserve natural aspect ratio */
+    max-width: 100%;          /* Scale down for smaller screens */
+    max-height: 300px;        /* Ensures all images scale to similar height */
+    object-fit: contain;      /* No cropping */
+    border-radius: 10px;      /* Consistent rounded corners */
 }
 
-/* Photo rows for multiple images */
+/* ====== Photo Rows (multiple images in a row) ====== */
 .photo-row {
-    display: flex;          /* Flexible layout for multiple images */
-    flex-wrap: wrap;        /* Wrap images on smaller screens */
-    justify-content: center; /* Center the row */
-    gap: 20px;              /* Space between images */
+    display: flex;            /* Flex layout for alignment */
+    flex-wrap: wrap;          /* Wrap to next line on small screens */
+    justify-content: center;  /* Center the row */
+    align-items: flex-start;  /* Align top edges */
+    gap: 20px;                /* Space between images */
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 /* Individual photo card */
 .photo-card {
-    flex: 1 1 auto;          /* Grow or shrink naturally */
-    max-width: 400px;        /* Optional: limits very large images */
-    text-align: center;      /* Centers caption and image */
+    flex: 1 1 auto;           /* Grow/shrink naturally */
+    text-align: center;       /* Captions centered */
 }
 
 /* Images inside photo card scale proportionally */
 .photo-card img {
-    width: 100%;            /* Fills the card container width */
-    height: auto;           /* Maintains natural aspect ratio */
-    border-radius: 10px;
-    object-fit: contain;    /* Prevents cropping */
+    width: auto;              /* Keep natural width */
+    max-width: 100%;          /* Scale down if too wide */
+    max-height: 300px;        /* Scale all images to similar max height */
+    display: block;
+    margin: 0 auto;
 }
 
 /* Captions under images */
 figcaption, .caption {
-    color: #000;
     text-align: center;
     font-size: 0.95rem;
     margin-top: 8px;
 }
 
-/* Step/tutorial images */
-.step img {
-    width: auto;           /* Natural width */
-    max-width: 90%;        /* Scales down if too wide */
-    height: auto;          /* Preserves aspect ratio */
-    display: block;
-    margin: 15px auto;
-    border-radius: 10px;
-    object-fit: contain;    /* No cropping */
-}
-
-/* Step container formatting */
+/* ====== Tutorial / Step Sections ====== */
 .step {
     margin-top: 25px;
+    margin-bottom: 25px;      /* Extra spacing between steps */
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
 }
 
-/* Text under step images */
+/* Images in tutorial steps */
+.step img {
+    width: auto;              /* Maintain natural width */
+    max-width: 80%;           /* Scales down for smaller screens */
+    max-height: 300px;        /* Aligns roughly with other images */
+    height: auto;             /* Preserve aspect ratio */
+    display: block;
+    margin: 20px auto;        /* Extra vertical spacing to prevent clumping */
+    border-radius: 10px;
+    object-fit: contain;      /* Prevent cropping */
+}
+
+/* Captions under step images */
 .step p, .photocard p {
     text-align: center;
     margin-bottom: 10px;
