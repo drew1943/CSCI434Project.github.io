@@ -77,7 +77,7 @@
     <div class="step">
         <h3>2. Solve the White Corners</h3>
         <p><strong>Goal:</strong> Complete the first layer by placing the four white corner pieces in their correct positions and orientations.</p>
-        <p><strong>Algorithm:</strong> <code>R' D' R D</code></p>
+        <p><strong>Algorithm:</strong> <b>R' D' R D</b></p>
         <p><strong>Instructions:</strong> Hold the solved white cross on the bottom. Place an unsolved white corner in the bottom-front-right slot with the white sticker on the side or top. Apply <code>R' D' R D</code> repeatedly until the white sticker is on the bottom. Repeat for all four corners.</p>
         <img src="WhiteLayer.png" alt="White corners example">
     </div>
@@ -87,10 +87,8 @@
         <h3>3. Solve the Middle Layer Edges</h3>
         <p><strong>Goal:</strong> Insert the four edge pieces into the middle layer without disturbing the solved white face.</p>
         <p><strong>Algorithms:</strong></p>
-        <ul>
-            <li>Edge to the right: <code>U R U' R' U' F' U F</code></li>
-            <li>Edge to the left: <code>U' L' U L U F U' F'</code></li>
-        </ul>
+            <br>Edge to the right: <b>U R U' R' U' F' U F</b>
+            <br>Edge to the left: <b>U' L' U L U F U' F'</b>
         <p><strong>Instructions:</strong> Identify the edge in the top layer. Align it with the center of the corresponding color. Decide if it goes to the left or right and use the matching algorithm. Repeat for all middle layer edges.</p>
         <img src="MiddleEdge.png" alt="Middle layer edges example">
     </div>
