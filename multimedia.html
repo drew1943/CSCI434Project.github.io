@@ -7,16 +7,16 @@
 
     <!-- External stylesheet link -->
     <link rel="stylesheet" href="styles.css">
- 
 </head>
 <body>
     
     <!-- Main header section for the page -->
     <header>
-        <h1> Walkthrough on how to solve a Rubiks Cube </h1>
-        <p>This page has a description and a video showing how to solve a Rubik's cube.</p>
+        <h1>Walkthrough on How to Solve a Rubik's Cube</h1>
+        <p>This page has a description and a video showing how to solve a Rubik's Cube.</p>
     </header>
-<nav>
+
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Course Projects</a></li>
@@ -27,11 +27,13 @@
             <li><a href="interactive.html">Interactive Puzzle Tools</a></li> 
         </ul>
     </nav>
-<h1>Rubiks Cube multimedia</h1>
-  <!-- Overview Section -->
+
+    <h1>Rubik's Cube Multimedia</h1>
+
+    <!-- Overview Section -->
     <section class="section-bubble bubble-white">
         <h2>Introduction</h2>
-        <p>The Rubik's Cube is a classic puzzle that can look overwhelming at first, but it becomes very manageable once you learn a beginner friendly method. This walkthrough explains the basic steps for solving a cube, and includes visuals and a video to help you understand the process.</p>
+        <p>The Rubik's Cube is a classic puzzle that can look overwhelming at first, but it becomes very manageable once you learn a beginner-friendly method. This walkthrough explains the basic steps for solving a cube, and includes visuals and a video to help you understand the process.</p>
     </section>
 
     <!-- Materials Section -->
@@ -44,7 +46,7 @@
         </ul>
     </section>
 
-      <!-- Video Section -->
+    <!-- Video Section -->
     <section class="section-bubble bubble-green">
         <h2>Video Demonstration</h2>
         <p>The video below walks through the basic steps on how to solve a Rubik's Cube. It was made by me a long time ago and is not a full video for algorithms to finish solving the cube.</p>
@@ -63,106 +65,102 @@
     
     <!-- Steps with Images -->
     <section class="section-bubble bubble-blue">
-    <h2>Step-by-Step Beginner Method</h2>
+        <h2>Step-by-Step Beginner Method</h2>
 
-    <!-- Step 1: White Cross -->
-    <div class="step">
-        <h3>1. Solve the White Cross</h3>
-        <p><b>Goal:</b> Make a white cross on one face while aligning the side colors with the center pieces of the adjacent faces.</p>
-        <p><b>How to do it:</b> Use intuitive moves to bring white edge pieces to the bottom (or top) layer depending on how you hold the cube for orientation. 
-            Focus on matching both the white face and the side colors with their centers. This step usually doesn’t require strict algorithms, just careful observation.</p>
-        <img src="WhiteCross.png" alt="White cross example">
-    </div>
+        <!-- Step 1: White Cross -->
+        <div class="step">
+            <h3>1. Solve the White Cross</h3>
+            <p><strong>Goal:</strong> Make a white cross on one face while aligning the side colors with the center pieces of the adjacent faces.</p>
+            <p><strong>How to do it:</strong> Use intuitive moves to bring white edge pieces to the bottom (or top) layer depending on how you hold the cube for orientation. Focus on matching both the white face and the side colors with their centers. This step usually doesn’t require strict algorithms, just careful observation.</p>
+            <img src="WhiteCross.png" alt="White cross example">
+        </div>
 
-    <!-- Step 2: White Corners -->
-    <div class="step">
-        <h3>2. Solve the White Corners</h3>
-        <p><b>Goal:</b> Complete the first layer by placing the four white corner pieces in their correct positions and orientations.</p>
-        <p><b>Algorithm: R' D' R D</b></p>
-        <p><b>Instructions:</b> Hold the solved white cross on the bottom. Place an unsolved white corner in the bottom-front-right slot with the white sticker on the side or top. 
-            Apply <b>R' D' R D</b> repeatedly until the white sticker is on the bottom. Repeat for all four corners.</p>
-        <img src="WhiteLayer.png" alt="White corners example">
-    </div>
+        <!-- Step 2: White Corners -->
+        <div class="step">
+            <h3>2. Solve the White Corners</h3>
+            <p><strong>Goal:</strong> Complete the first layer by placing the four white corner pieces in their correct positions and orientations.</p>
+            <p><strong>Algorithm:</strong> R' D' R D</p>
+            <p><strong>Instructions:</strong> Hold the solved white cross on the bottom. Place an unsolved white corner in the bottom-front-right slot with the white sticker on the side or top. Apply <strong>R' D' R D</strong> repeatedly until the white sticker is on the bottom. Repeat for all four corners.</p>
+            <img src="WhiteLayer.png" alt="White corners example">
+        </div>
 
-    <!-- Step 3: Middle Layer -->
-    <div class="step">
-        <h3>3. Solve the Middle Layer Edges</h3>
-        <p><b>Goal:</b> Insert the four edge pieces into the middle layer without disturbing the solved white face.</p>
-        <p><b>Algorithms:</b></p>
-            <p>Edge to the right: <b>U R U' R' U' F' U F</b></p>
-            <p>Edge to the left: <b>U' L' U L U F U' F'</b></p>
-        <p><strong>Instructions:</strong> Identify the edge in the top layer. Align it with the center of the corresponding color. Decide if it goes to the left or right and use the matching algorithm. Repeat for all middle layer edges.</p>
-        <img src="MiddleEdge.png" alt="Middle layer edges example">
-    </div>
+        <!-- Step 3: Middle Layer -->
+        <div class="step">
+            <h3>3. Solve the Middle Layer Edges</h3>
+            <p><strong>Goal:</strong> Insert the four edge pieces into the middle layer without disturbing the solved white face.</p>
+            <p><strong>Algorithms:</strong></p>
+            <p>Edge to the right: <strong>U R U' R' U' F' U F</strong></p>
+            <p>Edge to the left: <strong>U' L' U L U F U' F'</strong></p>
+            <p><strong>Instructions:</strong> Identify the edge in the top layer. Align it with the center of the corresponding color. Decide if it goes to the left or right and use the matching algorithm. Repeat for all middle layer edges.</p>
+            <img src="MiddleEdge.png" alt="Middle layer edges example">
+        </div>
 
-    <!-- Step 4: Yellow Cross -->
-    <div class="step">
-        <h3>4. Solve the Yellow Cross</h3>
-        <p><b>Goal:</b> Form a yellow cross on the top face regardless of corner positions.</p>
-        <p><b>Identify patterns:</b> You will see one of these shapes:</p>
-            <p>Dot (no edges yellow)</p>
-            <p>L shape (small corner L)</p>
-            <p>Line (straight horizontal bar)</p>
-        <p><b>Algorithm: F R U R' U' F'</b></p>
-        <p><b>Instructions:</b> 
-            <p>Dot: apply the algorithm once, any orientation</p>
-            <p>L shape: hold L at upper-left and apply algorithm</p>
-            <p>Line: hold horizontally and apply algorithm</p>
-        Repeat until the yellow cross is formed.</p>
-        <img src="YellowCrossShapes.png" alt="Yellow cross patterns">
-    </div>
+        <!-- Step 4: Yellow Cross -->
+        <div class="step">
+            <h3>4. Form the Yellow Cross</h3>
+            <p><strong>Goal:</strong> Form a yellow cross on the top face regardless of corner positions.</p>
+            <p><strong>Algorithm:</strong> F R U R' U' F'</p>
+            <p><strong>Instructions:</strong> Depending on your top face pattern, hold the cube accordingly and apply the algorithm until the yellow cross forms.</p>
+            <img src="YellowCrossShapes.png" alt="Yellow cross patterns">
+        </div>
 
-    <!-- Step 5: Position Yellow Corners -->
-    <div class="step">
-        <h3>5. Position Yellow Corners</h3>
-        <p><b>Goal:</b> Place all yellow corners in their correct location (orientation may not be correct yet).</p>
-        <p><b>Algorithm: U R U' L' U R' U' L</b></p>
-        <p><b>Instructions:</b> Keep the correctly placed corner at the front-right of the top face. Apply the algorithm until all corners are in their correct positions.</p>
-        <img src="YellowCorner1.jpg" alt="Yellow corners placement">
-    </div>
+        <!-- Step 5: Orient Yellow Edges -->
+        <div class="step">
+            <h3>5. Orient the Yellow Edges</h3>
+            <p><strong>Goal:</strong> Rotate the yellow edge pieces so they match the adjacent center colors.</p>
+            <p><strong>Algorithm:</strong> R U R' U R U2 R' U (used as needed for each edge)</p>
+            <p><strong>Instructions:</strong> Identify misoriented edges and apply the algorithm until all edges are aligned correctly.</p>
+        </div>
 
-    <!-- Step 6: Orient Yellow Corners -->
-    <div class="step">
-        <h3>6. Orient Yellow Corners</h3>
-        <p><strong>Goal:</strong> Rotate yellow corners so the top face is completely yellow.</p>
-        <p><strong>Algorithm:</strong> <code>R' D' R D</code> (same as white corner rotation)</p>
-        <p><strong>Instructions:</strong> Hold the cube with the corner to rotate at the front-right of the top layer. Apply the algorithm repeatedly until the yellow sticker is on top. Turn the top layer to the next corner and repeat.</p>
-        <img src="YellowCorner2.jpg" alt="Yellow corner orientation example">
-    </div>
+        <!-- Step 6: Position Yellow Corners -->
+        <div class="step">
+            <h3>6. Position Yellow Corners</h3>
+            <p><strong>Goal:</strong> Place all yellow corners in their correct location (orientation may not be correct yet).</p>
+            <p><strong>Algorithm:</strong> U R U' L' U R' U' L</p>
+            <p><strong>Instructions:</strong> Keep a correctly placed corner at the front-right of the top face. Apply the algorithm until all corners are in their correct positions.</p>
+            <img src="YellowCorner1.jpg" alt="Yellow corners placement">
+        </div>
 
-    <!-- Step 7: Solve the Final Layer Edges -->
-    <div class="step">
-        <h3>7. Solve the Final Layer Edges</h3>
-        <p><strong>Goal:</strong> Swap the remaining top edges to complete the cube.</p>
-        <p><strong>Algorithm (Edge Swap):</strong> <code>F2 U L R' F2 L' R U F2</code></p>
-        <p>Apply until all edges are in place. After this, the Rubik's Cube will be completely solved!</p>
-        <img src="RubikSolved.png" alt="Completed Rubik's Cube">
-    </div>
+        <!-- Step 7: Orient Yellow Corners -->
+        <div class="step">
+            <h3>7. Orient Yellow Corners</h3>
+            <p><strong>Goal:</strong> Rotate yellow corners so the top face is completely yellow.</p>
+            <p><strong>Algorithm:</strong> R' D' R D (applied repeatedly per corner)</p>
+            <p><strong>Instructions:</strong> Hold the corner to rotate at the front-right of the top layer. Apply the algorithm until the yellow sticker is on top. Turn the top layer to the next corner and repeat.</p>
+            <img src="YellowCorner2.jpg" alt="Yellow corner orientation example">
+        </div>
 
-</section>
-
+        <!-- Step 8: Solve the Final Layer Edges -->
+        <div class="step">
+            <h3>8. Solve the Final Layer Edges</h3>
+            <p><strong>Goal:</strong> Swap the remaining top edges to complete the cube.</p>
+            <p><strong>Algorithm (Edge Swap):</strong> F2 U L R' F2 L' R U F2</p>
+            <p>Apply until all edges are in place. After this, the Rubik's Cube will be completely solved!</p>
+            <img src="RubikSolved.png" alt="Completed Rubik's Cube">
+        </div>
+    </section>
 
     <!-- Final Tips -->
     <section class="section-bubble bubble-orange">
         <h2>Final Tips</h2>
         <p>The more you practice the steps, the faster you will become at recognizing patterns and moving smoothly through the solution. Beginners often take ten to fifteen minutes per solve, and that time improves naturally with repetition.</p>
-        <p>Please take a look at the link page for some helpful sites if you are courious about speed solving or other twisty puzzles.</p>
+        <p>Please take a look at the link page for some helpful sites if you are curious about speed solving or other twisty puzzles.</p>
         <h3>Beginner Method Algorithms: Practice each algorithm slowly until it becomes familiar.</h3>
-    <ul>
-        <li><strong>White Corners:</strong> R' D' R D</li>
-        <li><strong>Middle Layer Edges Right:</strong> U R U' R' U' F' U F</li>
-        <li><strong>Middle Layer Edges Left:</strong> U' L' U L U F U' F'</li>
-        <li><strong>Yellow Cross:</strong> F R U R' U' F'</li>
-        <li><strong>Position Yellow Corners:</strong> U R U' L' U R' U' L</li>
-        <li><strong>Orient Yellow Corners:</strong> R' D' R D</li>
-        <li><strong>Final Layer Edge Swap:</strong> F2 U L R' F2 L' R U F2</li>
-    </ul>
+        <ul>
+            <li><strong>White Corners:</strong> R' D' R D</li>
+            <li><strong>Middle Layer Edges Right:</strong> U R U' R' U' F' U F</li>
+            <li><strong>Middle Layer Edges Left:</strong> U' L' U L U F U' F'</li>
+            <li><strong>Yellow Cross:</strong> F R U R' U' F'</li>
+            <li><strong>Orient Yellow Edges:</strong> R U R' U R U2 R' U</li>
+            <li><strong>Position Yellow Corners:</strong> U R U' L' U R' U' L</li>
+            <li><strong>Orient Yellow Corners:</strong> R' D' R D</li>
+            <li><strong>Final Layer Edge Swap:</strong> F2 U L R' F2 L' R U F2</li>
+        </ul>
     </section>
 
-</main>
-
-
-        <!-- Footer with contact or copyright info -->
+    <!-- Footer -->
     <footer>
         <p>Created by Andrew Maxey-Hild | CSCI434 Web Programming | Hosted on GitHub Pages</p>
     </footer>
+</body>
+</html>
