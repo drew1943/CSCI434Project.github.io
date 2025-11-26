@@ -62,75 +62,87 @@
     </section>
     
     <!-- Steps with Images -->
-   <section class="section-bubble bubble-blue">
-    <h2>Basic Steps</h2>
+    <section class="section-bubble bubble-blue">
+    <h2>Step-by-Step Beginner Method</h2>
 
-    <div class="photocard">
-        <img src="RubikSolveSteps.png" alt="Rubik's Cube overview steps">
-        <p>This is the basic overview of all steps to solve a Rubik's Cube.</p>
-    </div>
-
+    <!-- Step 1: White Cross -->
     <div class="step">
         <h3>1. Solve the White Cross</h3>
-        <p>Goal: make a cross on one face (conventionally white) and make sure the side colors of those edge pieces match the center colors on the adjacent faces.
-        How to do it: Find a white edge piece (white plus a side color). Bring it to the top layer and rotate the top until the side color lines up with its center, then turn that edge down into the bottom face.
-        Most of the time this is done with intuitive turns; there is no single required algorithm. Practice getting the edges to match both center colors (not only the white).</p>
-        <img src="WhiteCross.png" alt="Rubik's Cube white cross example">
-        <p>Form a white cross that aligns with the center colors on all sides.</p>
+        <p><strong>Goal:</strong> Make a white cross on one face while aligning the side colors with the center pieces of the adjacent faces.</p>
+        <p><strong>How to do it:</strong> Use intuitive moves to bring white edge pieces to the bottom layer. Focus on matching both the white face and the side colors with their centers. This step usually doesn’t require strict algorithms, just careful observation.</p>
+        <img src="WhiteCross.png" alt="White cross example">
     </div>
 
+    <!-- Step 2: White Corners -->
     <div class="step">
         <h3>2. Solve the White Corners</h3>
-        <p>Goal: Put each corner that belongs with the white face into place so the entire first face is solved and the side stickers match their centers.
-        Algorithm (corner insertion / rotation): repeatedly use this to rotate a corner in place until the white sticker is on the bottom (assuming you hold the solved white cross on bottom):
-        R' D' R D
-        How to use it: Place the unsolved white corner in the bottom-front-right position (so the white sticker is on the side or top, not already on bottom).
-        Apply R' D' R D repeatedly until the corner is oriented correctly (white on the bottom). Repeat for all four corners</p>
-        <img src="WhiteLayer.png" alt="Rubik's Cube white corners example">
-        <p>Insert each white corner until the whole white face is complete.</p>
+        <p><strong>Goal:</strong> Complete the first layer by placing the four white corner pieces in their correct positions and orientations.</p>
+        <p><strong>Algorithm:</strong> <code>R' D' R D</code></p>
+        <p><strong>Instructions:</strong> Hold the solved white cross on the bottom. Place an unsolved white corner in the bottom-front-right slot with the white sticker on the side or top. Apply <code>R' D' R D</code> repeatedly until the white sticker is on the bottom. Repeat for all four corners.</p>
+        <img src="WhiteLayer.png" alt="White corners example">
     </div>
 
+    <!-- Step 3: Middle Layer -->
     <div class="step">
-        <h3>3. Solve the Middle Layer</h3>
-        <p>Goal: Move the four non-top-color edges from the top layer into the middle layer without disturbing the solved first layer.
-        You will use two mirror algorithms depending on whether the required edge slot is to the right or left of the front face.
-        To insert an edge that needs to go to the right (from top → right slot): U R U' R' U' F' U F
-        To insert an edge that needs to go to the left (from top → left slot): U' L' U L U F U' F'
-        How to use: Hold the cube so the front face shows the edge you want to insert on top, and the edge’s side color lines up with the front center.
-        Decide if the piece must go to the left or right slot, then perform the matching algorithm.
-        Repeat until the middle layer edges are all placed.</p>
-        <img src="MiddleEdge.png" alt="Rubik's Cube middle layer example">
-        <p>Use left and right algorithms to place the middle layer edges.</p>
+        <h3>3. Solve the Middle Layer Edges</h3>
+        <p><strong>Goal:</strong> Insert the four edge pieces into the middle layer without disturbing the solved white face.</p>
+        <p><strong>Algorithms:</strong></p>
+        <ul>
+            <li>Edge to the right: <code>U R U' R' U' F' U F</code></li>
+            <li>Edge to the left: <code>U' L' U L U F U' F'</code></li>
+        </ul>
+        <p><strong>Instructions:</strong> Identify the edge in the top layer. Align it with the center of the corresponding color. Decide if it goes to the left or right and use the matching algorithm. Repeat for all middle layer edges.</p>
+        <img src="MiddleEdge.png" alt="Middle layer edges example">
     </div>
 
+    <!-- Step 4: Yellow Cross -->
     <div class="step">
-        <h3>4. Solve the Yellow Layer</h3>
-        <p>Goal: Make a cross on the top face (usually the yellow face) regardless of edge permutation.
-        Look at the top face: you will see one of three useful patterns: Dot (no top edge yellow)
-        L shape (like a small corner L)
-        Line (a straight bar)
-        Use this single algorithm until you reach the cross:
-        F R U R' U' F'
-        Notes: If you have the dot, do the algorithm once holding any orientation.
-        If you have the L shape, rotate so the L is at upper left, then do the algorithm.
-        If you have the line, rotate so the line is horizontal, then do the algorithm.
-        After applying it as needed, the top will show a cross.</p>
-        
-        <img src="YellowCrossShapes.png" alt="Yellow cross shapes">
-        <p>Create the yellow cross by repeating the algorithm and rotating the cube.</p>
-
-        <img src="YellowCorner1.jpg" alt="Yellow corners placed">
-        <p>Place the yellow corners in the correct spots.</p>
-
-        <img src="YellowCorner2.jpg" alt="Yellow corners rotated">
-        <p>Rotate the corners to complete the yellow face.</p>
+        <h3>4. Solve the Yellow Cross</h3>
+        <p><strong>Goal:</strong> Form a yellow cross on the top face regardless of corner positions.</p>
+        <p><strong>Identify patterns:</strong> You will see one of these shapes:</p>
+        <ul>
+            <li>Dot (no edges yellow)</li>
+            <li>L shape (small corner L)</li>
+            <li>Line (straight horizontal bar)</li>
+        </ul>
+        <p><strong>Algorithm:</strong> <code>F R U R' U' F'</code></p>
+        <p><strong>Instructions:</strong> 
+        <ul>
+            <li>Dot: apply the algorithm once, any orientation</li>
+            <li>L shape: hold L at upper-left and apply algorithm</li>
+            <li>Line: hold horizontally and apply algorithm</li>
+        </ul>
+        Repeat until the yellow cross is formed.</p>
+        <img src="YellowCrossShapes.png" alt="Yellow cross patterns">
     </div>
 
+    <!-- Step 5: Position Yellow Corners -->
     <div class="step">
-        <h3>5. Final Solve</h3>
+        <h3>5. Position Yellow Corners</h3>
+        <p><strong>Goal:</strong> Place all yellow corners in their correct location (orientation may not be correct yet).</p>
+        <p><strong>Algorithm:</strong> <code>U R U' L' U R' U' L</code></p>
+        <p><strong>Instructions:</strong> Keep the correctly placed corner at the front-right of the top face. Apply the algorithm until all corners are in their correct positions.</p>
+        <img src="YellowCorner1.jpg" alt="Yellow corners placement">
+    </div>
+
+    <!-- Step 6: Orient Yellow Corners -->
+    <div class="step">
+        <h3>6. Orient Yellow Corners</h3>
+        <p><strong>Goal:</strong> Rotate yellow corners so the top face is completely yellow.</p>
+        <p><strong>Algorithm:</strong> <code>R' D' R D</code> (same as white corner rotation)</p>
+        <p><strong>Instructions:</strong> Hold the cube with the corner to rotate at the front-right of the top layer. Apply the algorithm repeatedly until the yellow sticker is on top. Turn the top layer to the next corner and repeat.</p>
+        <img src="YellowCorner2.jpg" alt="Yellow corner orientation example">
+    </div>
+
+    <!-- Step 7: Solve the Final Layer Edges -->
+    <div class="step">
+        <h3>7. Solve the Final Layer Edges</h3>
+        <p><strong>Goal:</strong> Swap the remaining top edges to complete the cube.</p>
+        <p><strong>Algorithm (Edge Swap):</strong> <code>F2 U L R' F2 L' R U F2</code></p>
+        <p>Apply until all edges are in place. After this, the Rubik's Cube will be completely solved!</p>
         <img src="RubikSolved.png" alt="Completed Rubik's Cube">
-        <p>The cube is fully solved.</p>
     </div>
+
 </section>
 
 
