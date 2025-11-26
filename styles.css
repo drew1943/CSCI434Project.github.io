@@ -112,41 +112,70 @@ section:hover {
 
 /* ====== Global Image Styles ====== */
 
-/* Global image styling for standalone images in main content */
+/* All images inside main content */
 main img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;              /* Prevents distortion for single images */
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto 10px;
+    width: auto;            /* Uses natural image width */
+    max-width: 100%;        /* Scales down for smaller screens */
+    height: auto;           /* Keeps aspect ratio, prevents stretching */
+    display: block;         /* Ensures images behave like block elements */
+    margin: 15px auto;      /* Centers images horizontally and adds spacing */
+    border-radius: 10px;    /* Smooth rounded corners for consistency */
+    object-fit: contain;    /* Keeps diagrams from being cropped */
 }
 
-/* Photo row for multiple uniform sized images */
-.photo-row { 
-    display: flex;
-    flex-wrap: wrap; /* Wrap on smaller screens */ 
-    gap: 20px; /* Space between images */ 
-    margin-top: 20px; 
-} 
-
-.photo-card { 
-    flex: 1 1 300px; /* Grow/shrink with min width */ 
-    text-align: center; 
-} 
-
-.photo-card img { 
-    width: 100%; /* Scale to container */ 
-    height: auto; /* Maintain aspect ratio */ 
-    border-radius: 8px; 
+/* Photo row for multiple images in a row */
+.photo-row {
+    display: flex;          /* Flex layout for images */
+    flex-wrap: wrap;        /* Wraps images to new line if screen is too small */
+    justify-content: center; /* Centers the row of images */
+    gap: 20px;              /* Space between images */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-/* Optional: captions under images */
+/* Individual card inside a photo row */
+.photo-card {
+    flex: 1 1 300px;        /* Flexible width: grows/shrinks with min 300px */
+    text-align: center;     /* Centers caption and image */
+}
+
+/* Image inside photo card */
+.photo-card img {
+    width: 100%;            /* Scales to container size */
+    height: auto;           /* Maintains natural aspect ratio */
+}
+
+/* Optional: Captions under images */
 figcaption, .caption {
-    color: #000;  /* black text */
-    text-align: center;
-    font-size: 0.95rem;
+    color: #000;            /* Black text for readability */
+    text-align: center;     /* Center captions under images */
+    font-size: 0.95rem;     /* Slightly smaller text for captions */
     margin-top: 8px;
+}
+
+/* Tutorial steps / bubbles images */
+.step img {
+    width: 80%;             /* Consistent width for step images */
+    max-width: 400px;       /* Prevents images from becoming too large */
+    height: auto;           /* Keeps aspect ratio */
+    display: block;
+    margin: 15px auto;      /* Centers each image */
+    border-radius: 10px;
+    object-fit: contain;    /* Avoid cropping diagrams */
+}
+
+/* Step box formatting */
+.step {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+}
+
+/* Centers text descriptions under each step image */
+.step p, .photocard p {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 /* Makes all tutorial images the same size inside the blue bubble */
@@ -157,32 +186,6 @@ figcaption, .caption {
     display: block;
     margin: 15px auto;
     border-radius: 10px;
-}
-
-/* Standard image formatting inside the step sections without cropping */
-.step img,
-.photocard img {
-    width: 80%;          /* consistent width without forcing shape */
-    max-width: 400px;    /* prevents huge images */
-    height: auto;        /* keeps natural aspect ratio */
-    display: block;
-    margin: 15px auto;
-    border-radius: 10px;
-}
-
-/* Step box formatting inside the blue bubble */
-.step {
-    margin-top: 25px;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-}
-
-/* Centers captions or descriptions under each image */
-.step p,
-.photocard p {
-    text-align: center;
-    margin-bottom: 10px;
 }
 
 
