@@ -114,57 +114,59 @@ section:hover {
 
 /* All images inside main content */
 main img {
-    width: auto;            /* Uses natural image width */
-    max-width: 100%;        /* Scales down for smaller screens */
-    height: auto;           /* Keeps aspect ratio, prevents stretching */
-    display: block;         /* Ensures images behave like block elements */
-    margin: 15px auto;      /* Centers images horizontally and adds spacing */
-    border-radius: 10px;    /* Smooth rounded corners for consistency */
-    object-fit: contain;    /* Keeps diagrams from being cropped */
+    max-width: 100%;      /* Never exceed the width of the container */
+    height: auto;         /* Keep natural aspect ratio */
+    display: block;       /* Treat images as block elements for margin */
+    margin: 15px auto;    /* Centers images with vertical spacing */
+    border-radius: 10px;  /* Consistent rounded corners */
+    object-fit: contain;  /* Ensures images are fully visible */
 }
 
-/* Photo row for multiple images in a row */
+/* Photo rows for multiple images */
 .photo-row {
-    display: flex;          /* Flex layout for images */
-    flex-wrap: wrap;        /* Wraps images to new line if screen is too small */
-    justify-content: center; /* Centers the row of images */
+    display: flex;          /* Flexible layout for multiple images */
+    flex-wrap: wrap;        /* Wrap images on smaller screens */
+    justify-content: center; /* Center the row */
     gap: 20px;              /* Space between images */
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-/* Individual card inside a photo row */
+/* Individual photo card */
 .photo-card {
-    flex: 1 1 300px;        /* Flexible width: grows/shrinks with min 300px */
-    text-align: center;     /* Centers caption and image */
+    flex: 1 1 auto;          /* Grow or shrink naturally */
+    max-width: 400px;        /* Optional: limits very large images */
+    text-align: center;      /* Centers caption and image */
 }
 
-/* Image inside photo card */
+/* Images inside photo card scale proportionally */
 .photo-card img {
-    width: 100%;            /* Scales to container size */
+    width: 100%;            /* Fills the card container width */
     height: auto;           /* Maintains natural aspect ratio */
+    border-radius: 10px;
+    object-fit: contain;    /* Prevents cropping */
 }
 
-/* Optional: Captions under images */
+/* Captions under images */
 figcaption, .caption {
-    color: #000;            /* Black text for readability */
-    text-align: center;     /* Center captions under images */
-    font-size: 0.95rem;     /* Slightly smaller text for captions */
+    color: #000;
+    text-align: center;
+    font-size: 0.95rem;
     margin-top: 8px;
 }
 
-/* Tutorial steps / bubbles images */
+/* Step/tutorial images */
 .step img {
-    width: 80%;             /* Consistent width for step images */
-    max-width: 400px;       /* Prevents images from becoming too large */
-    height: auto;           /* Keeps aspect ratio */
+    width: auto;           /* Natural width */
+    max-width: 90%;        /* Scales down if too wide */
+    height: auto;          /* Preserves aspect ratio */
     display: block;
-    margin: 15px auto;      /* Centers each image */
+    margin: 15px auto;
     border-radius: 10px;
-    object-fit: contain;    /* Avoid cropping diagrams */
+    object-fit: contain;    /* No cropping */
 }
 
-/* Step box formatting */
+/* Step container formatting */
 .step {
     margin-top: 25px;
     padding: 15px;
@@ -172,20 +174,10 @@ figcaption, .caption {
     border-radius: 12px;
 }
 
-/* Centers text descriptions under each step image */
+/* Text under step images */
 .step p, .photocard p {
     text-align: center;
     margin-bottom: 10px;
-}
-
-/* Makes all tutorial images the same size inside the blue bubble */
-.section-bubble img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-    margin: 15px auto;
-    border-radius: 10px;
 }
 
 
