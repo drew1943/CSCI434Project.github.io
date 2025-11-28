@@ -1,1 +1,264 @@
-work in progress
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function calculateTotal() {
+            let total = 0;
+            let totalQuantity = 0;
+
+            const prices = {
+                cube1: 12.99,
+                cube2: 59.99,
+                cube3: 22.99,
+                cube4: 14.99,
+                cube5: 9.99,
+                cube6: 15.99
+            };
+
+            for (const id in prices) {
+                const checkbox = document.querySelector(`input[name="${id}"]`);
+                const qtyInput = document.querySelector(`input[name="qty${id.slice(-1)}"]`);
+                const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+
+                if (checkbox && checkbox.checked) {
+                    total += prices[id] * quantity;
+                    totalQuantity += quantity;
+                }
+            }
+
+            let discount = 0;
+
+            // If they buy 5 or more items, apply ten percent off
+            if (totalQuantity >= 5) {
+                discount = total * 0.10;
+            }
+
+            const discountDisplay = document.getElementById("discountDisplay");
+            const discountNote = document.getElementById("discountNote");
+
+            if (discount > 0) {
+                discountDisplay.textContent = "- $" + discount.toFixed(2) + " (10% discount)";
+                discountNote.style.color = "green";
+            } else {
+                discountDisplay.textContent = "$0.00";
+                discountNote.style.color = "darkred";
+            }
+
+            document.getElementById("totalDisplay").textContent = "$" + (total - discount).toFixed(2);
+        }
+
+        function submitOrder(event) {
+            event.preventDefault();
+
+            const firstname = document.querySelector('input[name="firstname"]').value;
+            const lastname = document.querySelector('input[name="lastname"]').value;
+
+            const cubeLabels = {
+                cube1: "Rubik Standard 3x3",
+                cube2: "GoCube Smart Cube",
+                cube3: "Gan 356 RS",
+                cube4: "MoYu RS3M Magnetic",
+                cube5: "QiYi Pyraminx",
+                cube6: "ShengShou Megaminx"
+            };
+
+            const cubePrices = {
+                cube1: 12.99,
+                cube2: 59.99,
+                cube3: 22.99,
+                cube4: 14.99,
+                cube5: 9.99,
+                cube6: 15.99
+            };
+
+            let orderDetails = [];
+            let total = 0;
+            let totalQuantity = 0;
+
+            for (const id in cubeLabels) {
+                const checkbox = document.querySelector(`input[name="${id}"]`);
+                const qtyInput = document.querySelector(`input[name="qty${id.slice(-1)}"]`);
+                const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+
+                if (checkbox.checked) {
+                    const lineTotal = cubePrices[id] * quantity;
+                    total += lineTotal;
+                    totalQuantity += quantity;
+                    orderDetails.push(`${cubeLabels[id]} x${quantity} ($${lineTotal.toFixed(2)})`);
+                }
+            }
+
+            let discount = 0;
+            if (totalQuantity >= 5) {
+                discount = total * 0.10;
+            }
+
+            alert(
+                "Your order has been submitted.\n\n" +
+                "Customer: " + firstname + " " + lastname + "\n" +
+                "Items Ordered:\n- " + (orderDetails.length ? orderDetails.join("\n- ") : "No cubes selected") +
+                "\n\nDiscount: $" + discount.toFixed(2) +
+                "\nFinal Total: $" + (total - discount).toFixed(2) +
+                "\n\nThank you for your order!"
+            );
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Cube Purchase Form</h1>
+    <p>Use this form to build a custom cube order. Descriptions are included to help explain each section.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Course Projects</a></li>
+        <li><a href="terms.html">Terms and Definitions</a></li>
+        <li><a href="images.html">Puzzle Gallery</a></li>
+        <li><a href="multimedia.html">How To Solve a Cube</a></li>
+        <li><a href="links.html">Helpful Puzzle Resources</a></li>
+        <li><a href="interactive.html">Interactive Puzzle Tools</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Order Form</h2>
+
+    <form onsubmit="submitOrder(event)">
+
+        <!-- CUSTOMER INFORMATION -->
+        <div class="section-bubble bubble-white">
+            <h3>Your Information</h3>
+
+            <p>This section collects basic information so we know who the order belongs to.</p>
+
+            <label>First Name:</label>
+            <input type="text" name="firstname" required><br><br>
+
+            <label>Last Name:</label>
+            <input type="text" name="lastname" required><br><br>
+
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+
+            <label>Age:</label>
+            <input type="number" name="age" min="1"><br><br>
+        </div>
+
+        <!-- PERSONAL PREFERENCES -->
+        <div class="section-bubble bubble-yellow">
+            <h3>Personal Preferences</h3>
+
+            <p>This section is optional and helps match you with cubes that may fit your style.</p>
+
+            <label>Favorite Hobby:</label>
+            <input type="text" name="hobby"><br><br>
+
+            <label>Favorite Color:</label>
+            <input type="color" name="color"><br><br>
+
+            <label>Skill Level:</label>
+            <select name="skill">
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+            </select><br><br>
+        </div>
+
+        <!-- CUBE MODELS -->
+        <div class="section-bubble bubble-blue">
+            <h3>Cube Brands and Models</h3>
+
+            <p>Select the cubes you want and adjust quantity. Each model has a price listed beside it.</p>
+
+            <div>
+                <input type="checkbox" name="cube1"> Rubik Standard 3x3 ($12.99)
+                Qty: <input type="number" name="qty1" value="1" min="1" style="width:50px;">
+            </div>
+
+            <div>
+                <input type="checkbox" name="cube2"> GoCube Smart Cube ($59.99)
+                Qty: <input type="number" name="qty2" value="1" min="1" style="width:50px;">
+            </div>
+
+            <div>
+                <input type="checkbox" name="cube3"> Gan 356 RS ($22.99)
+                Qty: <input type="number" name="qty3" value="1" min="1" style="width:50px;">
+            </div>
+
+            <div>
+                <input type="checkbox" name="cube4"> MoYu RS3M Magnetic ($14.99)
+                Qty: <input type="number" name="qty4" value="1" min="1" style="width:50px;">
+            </div>
+
+            <div>
+                <input type="checkbox" name="cube5"> QiYi Pyraminx ($9.99)
+                Qty: <input type="number" name="qty5" value="1" min="1" style="width:50px;">
+            </div>
+
+            <div>
+                <input type="checkbox" name="cube6"> ShengShou Megaminx ($15.99)
+                Qty: <input type="number" name="qty6" value="1" min="1" style="width:50px;">
+            </div>
+
+            <h4>Discount</h4>
+            <p><strong>Discount Applied: <span id="discountDisplay">$0.00</span></strong></p>
+
+            <p id="discountNote" style="font-size: 15px; color: darkred; font-weight: bold;">
+                Buy 5 or more cubes to receive a ten percent discount.
+            </p>
+
+            <h4>Total</h4>
+            <p><strong>Total: <span id="totalDisplay">$0.00</span></strong></p>
+            <button type="button" onclick="calculateTotal()">Recalculate Total</button>
+        </div>
+
+        <!-- EXPERIENCE RATING -->
+        <div class="section-bubble bubble-green">
+            <h3>Experience Rating</h3>
+
+            <p>This slider lets you rate your ordering experience from 1 to 10.</p>
+
+            <input type="range" name="experience" min="1" max="10" id="experienceRange" 
+                   oninput="expValue.textContent = this.value">
+            <span id="expValue">5</span><br><br>
+        </div>
+
+        <!-- SHIPPING -->
+        <div class="section-bubble bubble-orange">
+            <h3>Shipping Preference</h3>
+
+            <p>Select the shipping speed you prefer. Faster shipping may cost more.</p>
+
+            <label>Shipping Speed:</label>
+            <input list="shipping" name="shipPref">
+            <datalist id="shipping">
+                <option value="Standard">
+                <option value="Priority">
+                <option value="Express">
+            </datalist><br><br>
+        </div>
+
+        <!-- COMMENTS -->
+        <div class="section-bubble bubble-white">
+            <h3>Additional Comments</h3>
+
+            <p>Use this space to provide special instructions or notes for your order.</p>
+
+            <textarea name="comments" rows="4" cols="40"></textarea><br><br>
+
+            <button type="submit">Submit Order</button>
+        </div>
+
+    </form>
+</main>
+
+</body>
+</html>
