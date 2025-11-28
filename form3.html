@@ -43,10 +43,10 @@
 
             if (discount > 0) {
                 discountDisplay.textContent = "- $" + discount.toFixed(2) + " (10% discount)";
-                discountNote.style.color = "green";
+                discountNote.style.color = "#66cc66";
             } else {
                 discountDisplay.textContent = "$0.00";
-                discountNote.style.color = "darkred";
+                discountNote.style.color = "#ff6666";
             }
 
             document.getElementById("totalDisplay").textContent = "$" + (total - discount).toFixed(2);
@@ -211,7 +211,7 @@
             <h4>Discount</h4>
             <p><strong>Discount Applied: <span id="discountDisplay">$0.00</span></strong></p>
 
-            <p id="discountNote" style="font-size: 15px; color: darkred; font-weight: bold;">
+            <p id="discountNote" style="font-size: 15px; color: #ff6666; font-weight: bold;">
                 Buy 5 or more cubes to receive a ten percent discount.
             </p>
 
