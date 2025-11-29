@@ -113,7 +113,7 @@
                 Repeat the process for all middle layer edges.</p>
                 <p>If there are edges in the wrong spots or they are flipped, just slot an edge with yellow into the spot as a placeholder. 
                 Additionally, the algorithms will be almost entirely flipped if your orientation is flipped. 
-                As such if white is on top the algorithm to slot the edge in the left would look more like <strong>D L D' L' D' F' D F</strong> </p>
+                As such if white is on top the algorithm to slot the edge in the left would look more like: <strong>D L D' L' D' F' D F</strong> </p>
             <img src="MiddleEdge.png" alt="Middle layer edges example">
         </div>
 
@@ -149,8 +149,9 @@
         <div class="step">
              <h3>6. Position Yellow Corners</h3>
             <p><strong>Goal:</strong> Place all yellow corners in their correct location (orientation may not be correct yet).</p>
-            <p><strong>Algorithm:</strong> U R U' L' U R' U' L</p>
-            <p><strong>Instructions:</strong> Keep a correctly placed corner at the front-right of the top face. Apply the algorithm until all corners are in their correct positions.</p>
+            <p><strong>Algorithm:</strong> U R U' L' U R' U' L or L' U R U' L U R' U'</p>
+            <p><strong>Instructions:</strong> Look at the yellow corners and see if one of them is already in the corect spot. Such as if the green, red, yellow corner is in between the green and red edges on the yellow top layer. 
+                For the algorithm (both versons work) you want to keep a correctly placed corner at the front-right of the top face. Then apply the algorithm until all corners are in their correct positions. Don't worry if they are twisted and not facing the corect colors, we just want them in the right spot.</p>
             <img src="YellowCorner1.jpg" alt="Yellow corners placement">
         </div>
 
@@ -158,9 +159,17 @@
         <div class="step">
           <h3>7. Orient Yellow Corners</h3>
           <p><strong>Goal:</strong> Rotate yellow corners so the top face is completely yellow.</p>
-          <p><strong>Algorithm (Headlights):</strong> R2 D R' U2 R D' R' U2 R'</p>
-          <p><strong>Instructions:</strong> Identify corners that are oriented incorrectly. Hold the cube so that the "headlights" (two matching corners) are on the front. Apply the algorithm repeatedly until all corners are oriented correctly. Turn the top layer as needed and repeat for remaining corners.</p>
+          <p><strong>Algorithm (Headlights):</strong> R U2 R' U' R U' R' - L' U2 L U L' U L </p>
+          <p><strong>Instructions:</strong> The algorithm for turning the corners is a little long. It does split equally in the middle for the what side you are working with so take it slow. 
+              The common pattern we are looking for is what I call yellow 'headlights.' 
+              There are two normal ways the yellow corners will align for this, it will have the corners looking the same way or they will be looking away from eacother. 
+              If they are looking the same direction then the algorithm is only needed once. If they are looking away from one another you can either do the algorithm twice or do it in reverse. 
+              If you don't immediatly see 'headlights' you probably need to do the algorithm on one side to fully fix one corner and have the second align for the 'headlights.'
+              The orientation you want to hold the cube is with the two corners you want to rotate starting on the right face of the cube. Then you do the algorithm and it will only spin the corner pieces. 
+              Repeat for the other corners as required.
+          </p>
           <img src="YellowCorner2.jpg" alt="Yellow corner orientation example">
+          <img src="yellowHeadlights.jpg" alt="Headlights">  
         </div>
 
 
