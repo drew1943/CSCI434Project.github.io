@@ -136,8 +136,12 @@
         <div class="step">
             <h3>5. Orient the Yellow Edges</h3>
             <p><strong>Goal:</strong> Rotate the yellow edge pieces so they match the adjacent center colors.</p>
-            <p><strong>Algorithm:</strong> R U R' U R U2 R' U (used as needed for each edge)</p>
-            <p><strong>Instructions:</strong> Identify misoriented edges and apply the algorithm until all edges are aligned correctly.</p>
+            <p><strong>Algorithm:</strong> R U2 R' U' R U' R' U' (used as needed for each edge)</p>
+            <p><strong>Instructions:</strong> For this step we need to look at all the edges and see which two are already in the proper places. 
+                You may have to rotate the yellow layer a couple of times, but two of the yellow edges should line up correctly with their respective other color centers. 
+                If they are across from eachother (blue/green or red/orange) you will need to do this algorithm twice. For the orientation if they are straight across from eachother have two that are correct be on the front and back faces and do the algorithm. 
+                Then once you have two that are the curved L shape have the orientation be with the correct edges on the back and left sides and repeat the algorithm.</p>
+            <p>This one is pretty straightforward, as long as you don't mess up the algorithm you will not break any other layers so go slow and steady.</p>
             <img src="YellowEdges2.jpg" alt="Yellow edges aligned">
         </div>
 
