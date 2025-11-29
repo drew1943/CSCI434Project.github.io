@@ -100,12 +100,19 @@
             <p><strong>Algorithms:</strong></p>
             <p>Edge to the right: <strong>U R U' R' U' F' U F</strong></p>
             <p>Edge to the left: <strong>U' L' U L U F U' F'</strong></p>
-            <p><strong>Instructions:</strong> Again hold the cube in whatever orientatoin is comfortable for you. 
+            <p><strong>Instructions:</strong> This process is similar to the white corners, but we don't want to break up the white layer we have complete. 
+                That's why algorithims are important, they are specific sets of moves that will only change a few pieces. 
+                <br>Again hold the cube in whatever orientatoin is comfortable for you.
                 We will start by identifying an edge in the bottom or top layer. This will be an edge piece that has no yellow. 
                 Align it with the center of the corresponding color. As an example I am going to align the blue/orange edge with the orange side because the blue side is touching the yellow center. 
-                Decide if it goes to the left or right by where the center for the color that is touching yellow is located. For my example the blue center is on the right if we have the cube oriented with the white face on the bottom. 
-                Then we will use the matching algorithm. Repeat the process for all middle layer edges.
-                <br> If there are edges in the wrong spots or they are flipped, just slot an edge with yellow into the spot as a placeholder.</p>
+                Decide if it goes to the left or right by where the center for the color that is touching yellow is located. 
+                For my example the blue center is on the right if we have the cube oriented with the white face on the bottom. 
+                Then we will use the matching algorithm. So for my example we use the right algorithm, this starts with us moving that edge away from the blue side and then bringing the blue, orange, white corner to the yellow layer. 
+                We bring the edge back to where it was so it is aligned with the one color again (orange), and then we move the white pieces that are still together back to the white center face. 
+                This attatches the edge piece to the corner, and we just slot it all together back into the white again. Now the middle layer edge should be aligned with its corrosponding colors. 
+                Repeat the process for all middle layer edges.
+                <br> If there are edges in the wrong spots or they are flipped, just slot an edge with yellow into the spot as a placeholder. 
+                Additionally, the algorithms will be almost entirely flipped if your orientation is flipped. As such if white is on top the algorithm to slot the edge in the left would look more like <strong>D L D' L' D' F' D F</strong> </p>
             <img src="MiddleEdge.png" alt="Middle layer edges example">
         </div>
 
