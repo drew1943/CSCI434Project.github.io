@@ -189,6 +189,7 @@ figcaption, .caption {
     max-height: 300px;        /* Aligns roughly with other images */
     height: auto;             /* Preserve aspect ratio */
     display: wrap;
+    text-align: center;
     margin: 20px auto;        /* Extra vertical spacing to prevent clumping */
     border-radius: 10px;
     object-fit: contain;      /* Prevent cropping */
@@ -242,11 +243,6 @@ figcaption, .caption {
 /* Nice color flash animation when timer starts */
 .timer-started {
     animation: flashStart 0.3s ease-out;
-}
-
-@keyframes flashStart {
-    from { background-color: #c5e1ff; }
-    to   { background-color: #ffffff; }
 }
 
 
