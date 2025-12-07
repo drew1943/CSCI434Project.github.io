@@ -188,7 +188,7 @@ figcaption, .caption {
     max-width: 80%;           /* Scales down for smaller screens */
     max-height: 300px;        /* Aligns roughly with other images */
     height: auto;             /* Preserve aspect ratio */
-    display: block;
+    display: wrap;
     margin: 20px auto;        /* Extra vertical spacing to prevent clumping */
     border-radius: 10px;
     object-fit: contain;      /* Prevent cropping */
@@ -203,7 +203,7 @@ figcaption, .caption {
 /* ====== Timer Styles ====== */
 
 #timerContainer {
-    display: flex;
+    display: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
