@@ -53,10 +53,6 @@ function startTimer() {
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 10);
     running = true;
-    document.getElementById("timerContainer").classList.add("timer-started");
-    setTimeout(() => {
-        document.getElementById("timerContainer").classList.remove("timer-started");
-    }, 300);
 }
 
 function stopTimer() {
@@ -72,26 +68,35 @@ function resetTimer() {
     document.getElementById("timerDisplay").textContent = "00:00.000";
 }
 
-// Key controls
+// Desktop keyboard controls
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
         event.preventDefault();
-        if (!running) {
-            startTimer();
-        } else {
-            stopTimer();
-        }
+        if (!running) startTimer();
+        else stopTimer();
     }
+    if (event.code === "KeyR") resetTimer();
+});
 
-    if (event.code === "KeyR") {
-        resetTimer();
-    }
+// Mobile tap controls
+document.getElementById("timerContainer").addEventListener("touchstart", function() {
+    if (!running) startTimer();
+    else stopTimer();
+});
+
+// Also allow simple click/tap for browsers that don't trigger touchstart
+document.getElementById("timerContainer").addEventListener("click", function() {
+    if (!running) startTimer();
+    else stopTimer();
 });
 </script>
 
 <section id="timerContainer">
   <div id="timerDisplay">00:00.000</div>
-  <p class="timer-instructions">Press Space to start or stop. Press R to reset.</p>
+  <p class="timer-instructions">
+    Press Space or tap the screen to start or stop.  
+    Press R to reset on desktop.
+  </p>
 </section>
 
 
