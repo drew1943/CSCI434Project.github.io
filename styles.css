@@ -200,6 +200,46 @@ figcaption, .caption {
     margin-bottom: 10px;
 }
 
+/* ====== Timer Styles ====== */
+
+#timerContainer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #ffffff;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    border-top: 12px solid #ff6f00; /* Rubik Orange bar */
+}
+
+#timerDisplay {
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+    color: #0051ba; /* Rubik Cube Blue */
+}
+
+.timer-instructions {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+/* Nice color flash animation when timer starts */
+.timer-started {
+    animation: flashStart 0.3s ease-out;
+}
+
+@keyframes flashStart {
+    from { background-color: #c5e1ff; }
+    to   { background-color: #ffffff; }
+}
 
 
 /* ====== Footer Section ====== */
