@@ -1,6 +1,4 @@
 /* ====== Global Styles ====== */
-
-/* Overall page layout and typography */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fafafa;
@@ -10,9 +8,7 @@ body {
     line-height: 1.6;
 }
 
-/* ====== Header Section ====== */
-
-/* Creates a strong header bar */
+/* ====== Header ====== */
 header {
     background: linear-gradient(135deg, #00509e, #0077cc);
     color: white;
@@ -27,19 +23,18 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* ====== Navigation (Rubik Cube Block Theme) ====== */
-
+/* ====== Navigation (Rubik Cube Theme) ====== */
 nav {
     background-color: #f2f5f9;
     padding: 2px;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 2px; /* minimal spacing between cube blocks */
+    gap: 2px;
 }
 
 nav li {
@@ -50,54 +45,43 @@ nav a {
     display: block;
     text-align: center;
     padding: 15px 0;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
     color: black;
-    border-radius: 0; /* square look */
+    border-radius: 0;
+    transition: opacity 0.2s;
 }
-
-/* ====== Mobile Fix for Nav Wrapping ====== */
-@media (max-width: 700px) {
-    nav ul {
-        flex-wrap: wrap;
-    }
-
-    nav li {
-        flex: 1 1 45%; /* two per row, adjusts as needed */
-        margin-bottom: 4px;
-    }
-
-    nav a {
-        padding: 12px 0;
-        font-size: 1rem;
-    }
-}
-
-/* Rubik cube colors */
-nav li:nth-child(1) a { background-color: #ffffff; } /* soft white */
-nav li:nth-child(2) a { background-color: #c41e3a; } /* red */
-nav li:nth-child(3) a { background-color: #ff6f00; } /* orange */
-nav li:nth-child(4) a { background-color: #009e60; } /* green */
-nav li:nth-child(5) a { background-color: #0051ba; } /* blue */
-nav li:nth-child(6) a { background-color: #f2e23d; } /* yellow */
-nav li:nth-child(7) a { background-color: #8200ff; } /* purple */
 
 nav a:hover {
     opacity: 0.85;
 }
 
+/* Mobile nav adjustments */
+@media (max-width: 700px) {
+    nav ul { flex-wrap: wrap; }
+    nav li { flex: 1 1 45%; margin-bottom: 4px; }
+    nav a { padding: 12px 0; font-size: 1rem; }
+}
+
+/* Rubik cube colors */
+nav li:nth-child(1) a { background-color: #ffffff; }
+nav li:nth-child(2) a { background-color: #c41e3a; }
+nav li:nth-child(3) a { background-color: #ff6f00; }
+nav li:nth-child(4) a { background-color: #009e60; }
+nav li:nth-child(5) a { background-color: #0051ba; }
+nav li:nth-child(6) a { background-color: #f2e23d; }
+nav li:nth-child(7) a { background-color: #8200ff; }
 
 /* ====== Main Content ====== */
-
 main {
     padding: 2rem;
     max-width: 900px;
     margin: auto;
 }
 
-/* Card container styling */
+/* Sections / Cards */
 section {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
@@ -105,106 +89,67 @@ section {
     transition: transform 0.2s ease;
 }
 
-section:hover {
-    transform: scale(1.01);
-}
+section:hover { transform: scale(1.01); }
 
-/* Rubik Cube Form Bubbles with stronger colors but readable text */
+/* Bubble sections with stronger colors */
 .section-bubble {
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-    color: #000; /* ensures text is readable */
+    color: #000;
 }
 
-/* Bubble boxes for form with strong colors */
-.bubble-white { background-color: rgba(255, 255, 255, 0.95); }
-.bubble-yellow { background-color: rgba(242, 226, 61, 0.85); }
-.bubble-red { background-color: rgba(196, 30, 58, 0.85); }
-.bubble-blue { background-color: rgba(0, 81, 186, 0.85); }
-.bubble-green { background-color: rgba(0, 158, 96, 0.85); }
-.bubble-orange { background-color: rgba(255, 111, 0, 0.85); }
+.bubble-white   { background-color: rgba(255, 255, 255, 0.95); }
+.bubble-yellow  { background-color: rgba(242, 226, 61, 0.85); }
+.bubble-red     { background-color: rgba(196, 30, 58, 0.85); }
+.bubble-blue    { background-color: rgba(0, 81, 186, 0.85); }
+.bubble-green   { background-color: rgba(0, 158, 96, 0.85); }
+.bubble-orange  { background-color: rgba(255, 111, 0, 0.85); }
 
-
-/* ====== Global Image Styles ====== */
-
-/* All images inside main content */
-main img {
-    display: block;           /* Treat images as block elements */
-    margin: 15px auto;        /* Centers images vertically and horizontally */
-    height: auto;             /* Preserve natural aspect ratio */
-    max-width: 100%;          /* Scale down for smaller screens */
-    max-height: 300px;        /* Ensures all images scale to similar height */
-    object-fit: contain;      /* No cropping */
-    border-radius: 10px;      /* Consistent rounded corners */
-}
-
-/* ====== Photo Rows (multiple images in a row) ====== */
-.photo-row {
-    display: flex;            /* Flex layout for alignment */
-    flex-wrap: wrap;          /* Wrap to next line on small screens */
-    justify-content: center;  /* Center the row */
-    align-items: flex-start;  /* Align top edges */
-    gap: 20px;                /* Space between images */
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-/* Individual photo card */
-.photo-card {
-    flex: 1 1 auto;           /* Grow/shrink naturally */
-    text-align: center;       /* Captions centered */
-}
-
-/* Images inside photo card scale proportionally */
-.photo-card img {
-    width: auto;              /* Keep natural width */
-    max-width: 100%;          /* Scale down if too wide */
-    max-height: 300px;        /* Scale all images to similar max height */
+/* ====== Images ====== */
+main img, .photo-card img, .step img {
     display: block;
-    margin: 0 auto;
+    margin: 15px auto;
+    max-width: 100%;
+    max-height: 300px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
-/* Captions under images */
-figcaption, .caption {
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.photo-card {
+    flex: 1 1 auto;
     text-align: center;
-    font-size: 0.95rem;
-    margin-top: 8px;
 }
 
-/* ====== Tutorial / Step Sections ====== */
+figcaption, .caption, .step p, .photocard p {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Tutorial steps */
 .step {
-    margin-top: 25px;
-    margin-bottom: 25px;      /* Extra spacing between steps */
+    margin: 25px 0;
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
 }
 
-/* Images in tutorial steps */
-.step img {
-    width: auto;              /* Maintain natural width */
-    max-width: 80%;           /* Scales down for smaller screens */
-    max-height: 300px;        /* Aligns roughly with other images */
-    height: auto;             /* Preserve aspect ratio */
-    display: wrap;
-    text-align: center;
-    margin: 20px auto;        /* Extra vertical spacing to prevent clumping */
-    border-radius: 10px;
-    object-fit: contain;      /* Prevent cropping */
-}
-
-/* Captions under step images */
-.step p, .photocard p {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* ====== Timer Styles ====== */
-
+/* ====== Timer ====== */
 #timerContainer {
-    display: wrap;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -214,17 +159,17 @@ figcaption, .caption {
 }
 
 #timerDisplay {
-    font-size: 6rem;       /* Bigger timer */
+    font-size: 6rem;
     font-weight: bold;
     font-family: Arial, sans-serif;
     margin-bottom: 20px;
 }
 
 #timerButtons {
-    margin-top: 15px;
     display: flex;
     gap: 12px;
     justify-content: center;
+    margin-top: 15px;
 }
 
 #timerButtons button {
@@ -235,18 +180,10 @@ figcaption, .caption {
     cursor: pointer;
 }
 
-.timer-instructions {
-    font-size: 1.2rem;
-    color: #555;
-}
+.timer-instructions { font-size: 1.2rem; color: #555; }
+.timer-started { animation: flashStart 0.3s ease-out; }
 
-/* Nice color flash animation when timer starts */
-.timer-started {
-    animation: flashStart 0.3s ease-out;
-}
-
-
-/* ====== Footer Section ====== */
+/* ====== Footer ====== */
 footer {
     background-color: #00509e;
     color: white;
