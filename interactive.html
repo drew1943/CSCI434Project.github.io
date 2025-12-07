@@ -53,12 +53,14 @@ function startTimer() {
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 10);
     running = true;
+    document.getElementById("startStopButton").textContent = "Stop";
 }
 
 function stopTimer() {
     clearInterval(timerInterval);
     elapsed += Date.now() - startTime;
     running = false;
+    document.getElementById("startStopButton").textContent = "Start";
 }
 
 function resetTimer() {
@@ -66,9 +68,18 @@ function resetTimer() {
     elapsed = 0;
     running = false;
     document.getElementById("timerDisplay").textContent = "00:00.000";
+    document.getElementById("startStopButton").textContent = "Start";
 }
 
-// Desktop keyboard controls
+// Button controls
+document.getElementById("startStopButton").addEventListener("click", () => {
+    if (!running) startTimer();
+    else stopTimer();
+});
+
+document.getElementById("resetButton").addEventListener("click", resetTimer);
+
+// Optional keyboard support
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
         event.preventDefault();
@@ -78,16 +89,14 @@ document.addEventListener("keydown", function(event) {
     if (event.code === "KeyR") resetTimer();
 });
 
-// Mobile tap controls
-document.getElementById("timerContainer").addEventListener("touchstart", function() {
-    if (!running) startTimer();
-    else stopTimer();
-});
-
-// Also allow simple click/tap for browsers that don't trigger touchstart
-document.getElementById("timerContainer").addEventListener("click", function() {
-    if (!running) startTimer();
-    else stopTimer();
+// Desktop keyboard controls
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+        event.preventDefault();
+        if (!running) startTimer();
+        else stopTimer();
+    }
+    if (event.code === "KeyR") resetTimer();
 });
 </script>
 
@@ -100,8 +109,8 @@ document.getElementById("timerContainer").addEventListener("click", function() {
   </div>
 
   <p class="timer-instructions">
-    Tap the Start or Stop button on mobile.  
-    Press R to reset on desktop if you want keyboard support.
+    Tap the Start or Stop button on mobile or desktop. You can also press spacebar.
+    Reset with the reset button or press R on desktop.
   </p>
 </section>
 
