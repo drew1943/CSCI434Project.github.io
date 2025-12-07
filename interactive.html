@@ -53,6 +53,10 @@ function startTimer() {
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 10);
     running = true;
+    document.getElementById("timerContainer").classList.add("timer-started");
+    setTimeout(() => {
+        document.getElementById("timerContainer").classList.remove("timer-started");
+    }, 300);
 }
 
 function stopTimer() {
@@ -85,9 +89,11 @@ document.addEventListener("keydown", function(event) {
 });
 </script>
 
-<div id="timerDisplay" style="font-size: 3rem; text-align: center; margin-top: 20px;">
-  00:00.000
-</div>
+<section id="timerContainer">
+  <div id="timerDisplay">00:00.000</div>
+  <p class="timer-instructions">Press Space to start or stop. Press R to reset.</p>
+</section>
+    
 <p style="text-align: center;">
   Press Space to start or stop. Press R to reset.
 </p>
@@ -99,3 +105,5 @@ document.addEventListener("keydown", function(event) {
     <footer>
         <p>Created by Andrew Maxey-Hild | CSCI434 Web Programming | Hosted on GitHub Pages</p>
     </footer>
+</body>
+</html>
