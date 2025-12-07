@@ -219,6 +219,21 @@ figcaption, .caption {
     margin-bottom: 20px;
 }
 
+#timerButtons {
+    margin-top: 15px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+#timerButtons button {
+    font-size: 1.1rem;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
 .timer-instructions {
     font-size: 1.2rem;
     color: #555;
