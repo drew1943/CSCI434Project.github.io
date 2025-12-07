@@ -30,73 +30,71 @@
 <h1>Rubiks Cube Interactive Tools</h1>
 
     <script>
-let startTime = 0;
-let elapsed = 0;
-let timerInterval = null;
-let running = false;
+document.addEventListener("DOMContentLoaded", () => {
 
-function updateTimer() {
-    const now = Date.now();
-    const diff = now - startTime + elapsed;
+    let startTime = 0;
+    let elapsed = 0;
+    let timerInterval = null;
+    let running = false;
 
-    const minutes = Math.floor(diff / 60000);
-    const seconds = Math.floor((diff % 60000) / 1000);
-    const milliseconds = diff % 1000;
+    const display = document.getElementById("timerDisplay");
+    const startStopButton = document.getElementById("startStopButton");
+    const resetButton = document.getElementById("resetButton");
 
-    document.getElementById("timerDisplay").textContent =
-        String(minutes).padStart(2, "0") + ":" +
-        String(seconds).padStart(2, "0") + "." +
-        String(milliseconds).padStart(3, "0");
-}
+    function updateTimer() {
+        const now = Date.now();
+        const diff = now - startTime + elapsed;
 
-function startTimer() {
-    startTime = Date.now();
-    timerInterval = setInterval(updateTimer, 10);
-    running = true;
-    document.getElementById("startStopButton").textContent = "Stop";
-}
+        const minutes = Math.floor(diff / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        const milliseconds = diff % 1000;
 
-function stopTimer() {
-    clearInterval(timerInterval);
-    elapsed += Date.now() - startTime;
-    running = false;
-    document.getElementById("startStopButton").textContent = "Start";
-}
+        display.textContent =
+            String(minutes).padStart(2, "0") + ":" +
+            String(seconds).padStart(2, "0") + "." +
+            String(milliseconds).padStart(3, "0");
+    }
 
-function resetTimer() {
-    clearInterval(timerInterval);
-    elapsed = 0;
-    running = false;
-    document.getElementById("timerDisplay").textContent = "00:00.000";
-    document.getElementById("startStopButton").textContent = "Start";
-}
+    function startTimer() {
+        startTime = Date.now();
+        timerInterval = setInterval(updateTimer, 10);
+        running = true;
+        startStopButton.textContent = "Stop";
+    }
 
-// Button controls
-document.getElementById("startStopButton").addEventListener("click", () => {
-    if (!running) startTimer();
-    else stopTimer();
-});
+    function stopTimer() {
+        clearInterval(timerInterval);
+        elapsed += Date.now() - startTime;
+        running = false;
+        startStopButton.textContent = "Start";
+    }
 
-document.getElementById("resetButton").addEventListener("click", resetTimer);
+    function resetTimer() {
+        clearInterval(timerInterval);
+        elapsed = 0;
+        running = false;
+        display.textContent = "00:00.000";
+        startStopButton.textContent = "Start";
+    }
 
-// Optional keyboard support
-document.addEventListener("keydown", function(event) {
-    if (event.code === "Space") {
-        event.preventDefault();
+    // Button controls (now safe)
+    startStopButton.addEventListener("click", () => {
         if (!running) startTimer();
         else stopTimer();
-    }
-    if (event.code === "KeyR") resetTimer();
-});
+    });
 
-// Desktop keyboard controls
-document.addEventListener("keydown", function(event) {
-    if (event.code === "Space") {
-        event.preventDefault();
-        if (!running) startTimer();
-        else stopTimer();
-    }
-    if (event.code === "KeyR") resetTimer();
+    resetButton.addEventListener("click", resetTimer);
+
+    // Keyboard support
+    document.addEventListener("keydown", function(event) {
+        if (event.code === "Space") {
+            event.preventDefault();
+            if (!running) startTimer();
+            else stopTimer();
+        }
+        if (event.code === "KeyR") resetTimer();
+    });
+
 });
 </script>
 
